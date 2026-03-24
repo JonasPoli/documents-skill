@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #fff; padding: 60px 0; }
+        .pricing-header { text-align: center; margin-bottom: 50px; }
+        h1 { font-weight: 700; font-size: 48px; color: #222; }
+        .tabs-container { display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: 0 auto 30px; }
+        .tabs { border: 1px solid #ddd; border-radius: 8px; padding: 5px; display: flex; }
+        .tab-item { padding: 10px 25px; font-weight: 700; border-radius: 6px; cursor: pointer; }
+        .tab-item.active { background: #FF8364; color: white; }
+        .pricing-table { background: #F9F9F9; border-radius: 12px; padding: 20px; }
+        .price-row { padding: 15px 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; }
+        .price-row:last-child { border-bottom: none; }
+        .price-value { font-weight: 700; font-size: 24px; color: #222; }
+        .btn-coral { background: #FF8364; color: white; border: none; padding: 15px 40px; font-weight: 700; border-radius: 12px; margin-top: 30px; width: 100%; max-width: 250px; }
+        .help-link { color: #FF8364; text-decoration: none; font-weight: 600; margin-top: 20px; display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pricing-header">
+            <h1>Pricing</h1>
+            <p>I can change any and everything in my life by simply changing myself.</p>
+        </div>
+        
+        <div class="tabs-container">
+            <input type="text" class="form-control" placeholder="2000 Subscribers" style="width: 200px; background: #f5f5f5; border: none;">
+            <div class="tabs">
+                <div class="tab-item active">Monthly</div>
+                <div class="tab-item">Annually</div>
+            </div>
+        </div>
+
+        <div class="pricing-table">
+            <div class="price-row" style="background: #efefef; font-weight: 600; font-size: 12px; border-radius: 8px;">
+                <span>Subscribers</span>
+                <span>Monthly Cost: USD</span>
+                <span>E-mails</span>
+            </div>
+            <div class="price-row">
+                <span>1 - 1 000</span>
+                <span class="price-value">Free</span>
+                <span>Unlimited</span>
+            </div>
+            <div class="price-row" style="background: #f1f1f1;">
+                <span>1 001 - 2 500</span>
+                <span class="price-value">$15</span>
+                <span>Unlimited</span>
+            </div>
+            <div class="price-row">
+                <span>2 501 - 5 000</span>
+                <span class="price-value">$25</span>
+                <span>Unlimited</span>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <a href="#" class="help-link">● Need a help?</a>
+            <button class="btn-coral">Button</button>
+        </div>
+    </div>
+</body>
+</html>

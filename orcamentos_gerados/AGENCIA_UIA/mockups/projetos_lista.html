@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css'>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f0f2f5; color: #333; margin: 0; padding: 0; }
+        .sidebar { width: 280px; background: #1a1e2b; color: #fff; height: 100vh; position: fixed; padding: 25px; box-sizing: border-box; }
+        .sidebar .nav-link { color: #aeb7c2; font-weight: 500; padding: 12px 0; display: block; text-decoration: none; transition: 0.3s; }
+        .sidebar .nav-link.active { color: #FF8364; }
+        .sidebar .nav-link i { margin-right: 12px; }
+        .main-content { margin-left: 280px; padding: 40px; min-height: 100vh; box-sizing: border-box; }
+        .card { border: none; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: #fff; margin-bottom: 20px; }
+        .btn-coral { background: #FF8364; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; font-size: 0.9rem; }
+        .btn-action { background: #e9ecef; color: #333; border: none; padding: 5px 10px; border-radius: 6px; font-size: 0.85rem; margin-right: 5px; text-decoration: none; display: inline-block; transition: 0.2s; }
+        .btn-action:hover { background: #FF8364; color: white; }
+        .form-control { border-radius: 10px; padding: 12px; border: 1px solid #ddd; width: 100%; box-sizing: border-box; }
+        .table thead { background: #f8f9fa; border-top: 1px solid #dee2e6; }
+        .table th { font-weight: 600; color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 15px 10px; }
+        .table td { vertical-align: middle; padding: 15px 10px; font-size: 0.95rem; }
+        h1 { font-weight: 800; color: #1a1e2b; margin-bottom: 10px; }
+        .badge { padding: 6px 12px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; }
+        .badge-active { background-color: #d1e7dd; color: #0f5132; }
+        .badge-pending { background-color: #fff3cd; color: #664d03; }
+    </style>
+</head>
+<body>
+    <div class='sidebar'>
+        <h4 class='mb-4 text-center' style='color: #FF8364; font-weight: 800;'>UIA SYSTEM</h4>
+        <nav class='mt-5'>
+            <a href='dashboard.html' class='nav-link'><i class='bi bi-speedometer2'></i> Dashboard</a>
+            <a href='clientes_lista.html' class='nav-link'><i class='bi bi-person-lines-fill'></i> Clientes</a>
+            <a href='projetos_lista.html' class='nav-link active'><i class='bi bi-folder2-open'></i> Projetos</a>
+            <a href='historico_lista.html' class='nav-link'><i class='bi bi-clock-history'></i> Histórico</a>
+            <a href='relatorio_producao.html' class='nav-link'><i class='bi bi-file-earmark-pdf'></i> Relatórios</a>
+        </nav>
+    </div>
+    <div class='main-content'>
+
+        <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;'>
+            <div>
+                <h1>Gestão de Projetos</h1>
+                <p style='color: #666;'>Visão geral de faturamento e entregas.</p>
+            </div>
+            <button class='btn-coral'><i class='bi bi-plus-lg'></i> Novo Projeto</button>
+        </div>
+        
+        <div class='card p-4'>
+            <div style='display: flex; justify-content: space-between; margin-bottom: 20px;'>
+                <div style='width: 300px;'><input type='text' class='form-control' placeholder='Buscar projeto...'></div>
+                <div><button class='btn btn-outline-secondary'><i class='bi bi-filter'></i> Filtrar Status</button></div>
+            </div>
+            
+            <table class='table table-hover'>
+                <thead>
+                    <tr><th>PID</th><th>Cliente (Mestre)</th><th>Nome do Projeto</th><th>Prazo</th><th>Status</th><th>Ações</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>#PRJ-001</strong></td>
+                        <td><a href='clientes_view.html' style='color: #1a1e2b; font-weight: 600; text-decoration: none;'><i class='bi bi-link-45deg'></i> Máxima</a></td>
+                        <td>Campanha de Inverno 2026</td>
+                        <td>30/06/2026</td>
+                        <td><span class='badge badge-active'>Em Andamento</span></td>
+                        <td>
+                            <a href='#' class='btn-action' title='Editar'><i class='bi bi-pencil'></i></a>
+                            <a href='projetos_view.html' class='btn-action' title='Ver Detalhes'><i class='bi bi-eye'></i> Painel</a>
+                            <a href='#' class='btn-action' title='Timeline' style='background: #FF8364; color: white;'><i class='bi bi-list-task'></i> Histórico</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#PRJ-002</strong></td>
+                        <td><a href='clientes_view.html' style='color: #1a1e2b; font-weight: 600; text-decoration: none;'><i class='bi bi-link-45deg'></i> Máxima</a></td>
+                        <td>Design Embalagens</td>
+                        <td>15/07/2026</td>
+                        <td><span class='badge badge-pending'>Aguardando</span></td>
+                        <td>
+                            <a href='#' class='btn-action' title='Editar'><i class='bi bi-pencil'></i></a>
+                            <a href='projetos_view.html' class='btn-action' title='Ver Detalhes'><i class='bi bi-eye'></i> Painel</a>
+                            <a href='#' class='btn-action' title='Timeline' style='background: #FF8364; color: white;'><i class='bi bi-list-task'></i> Histórico</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

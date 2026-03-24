@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Usuário - WAB File Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        .sidebar { min-height: 100vh; background: #ffffff; border-right: 1px solid #dee2e6; width: 250px; position: fixed; }
+        .sidebar .nav-link { color: #495057; padding: 12px 20px; font-weight: 500; }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active { color: #0d6efd; background: #f0f7ff; border-radius: 5px; }
+        .main-content { margin-left: 250px; padding: 40px; flex: 1; }
+        .card { border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .kpi-card { background: linear-gradient(135deg, #0d6efd, #0dcaf0); color: white; }
+        .chart-container { position: relative; height: 300px; width: 100%; }
+        .badge-status { padding: 8px 12px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; }
+    </style>
+</head>
+<body class="d-flex">
+    <div class="sidebar d-flex flex-column p-4">
+        <h4 class="mb-4 text-primary fw-bold"><i class="fas fa-paper-plane me-2"></i> WAB Envio</h4>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link active"><i class="fas fa-home me-2"></i> Início</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link"><i class="fas fa-cloud-upload-alt me-2"></i> Enviar Arquivo</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link"><i class="fas fa-history me-2"></i> Meus Envios</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link"><i class="fas fa-user-circle me-2"></i> Meu Perfil</a>
+            </li>
+        </ul>
+        <div class="mt-auto p-3 bg-light rounded text-center">
+            <small class="text-muted d-block mb-1">Status da Conta</small>
+            <span class="badge bg-success">Aprovado</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold text-dark">Bem-vindo, <span class="text-primary">Guilherme Martins</span>!</h2>
+                <p class="text-muted mb-0">Gerencie seus arquivos de forma rápida e segura.</p>
+            </div>
+            <button class="btn btn-primary btn-lg rounded-pill px-4 shadow"><i class="fas fa-plus me-2"></i> Novo Envio</button>
+        </header>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card kpi-card p-4 h-100 d-flex flex-column justify-content-center">
+                    <h6 class="text-white-50 text-uppercase ls-1">Arquivos Enviados</h6>
+                    <h1 class="display-4 fw-bold mb-0">142</h1>
+                    <div class="mt-3">
+                        <span class="badge bg-white text-primary rounded-pill">+12% este mês</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h6 class="text-muted fw-bold mb-0">Evolução de Envios (6 Meses)</h6>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-light dropdown-toggle" type="button">2026</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="enviosChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">Atividades Recentes</h5>
+                <a href="#" class="text-decoration-none small fw-bold">Ver histórico completo <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="bg-light">
+                        <tr class="text-muted small text-uppercase">
+                            <th class="border-0 px-4">Documento</th>
+                            <th class="border-0">Destinatário</th>
+                            <th class="border-0">Data de Envio</th>
+                            <th class="border-0">Status</th>
+                            <th class="border-0 text-end px-4">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-soft-danger p-2 rounded me-3" style="background: #ffe5e5; color: #dc3545;">
+                                        <i class="far fa-file-pdf fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">contrato_servico_v1.pdf</div>
+                                        <small class="text-muted">ID: #ARQ-9821</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-bold text-dark">Ricardo Souza</div>
+                                <small class="text-muted">ricardo@gestao.com.br</small>
+                            </td>
+                            <td>24/03/2026 <span class="text-muted">10:30</span></td>
+                            <td><span class="badge bg-warning text-dark badge-status"><i class="fas fa-clock me-1"></i> EM TRÂNSITO</span></td>
+                            <td class="text-end px-4">
+                                <button class="btn btn-sm btn-light rounded-circle"><i class="fas fa-ellipsis-v"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-soft-primary p-2 rounded me-3" style="background: #e7f1ff; color: #0d6efd;">
+                                        <i class="far fa-file-word fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">relatorio_atividades.docx</div>
+                                        <small class="text-muted">ID: #ARQ-9815</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-bold text-dark">Ana Paula Silva</div>
+                                <small class="text-muted">ana.paula@empresa.com</small>
+                            </td>
+                            <td>22/03/2026 <span class="text-muted">15:45</span></td>
+                            <td><span class="badge bg-success badge-status"><i class="fas fa-check me-1"></i> RECEBIDO</span></td>
+                            <td class="text-end px-4">
+                                <button class="btn btn-sm btn-light rounded-circle"><i class="fas fa-ellipsis-v"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit to ensure script is loaded if CDN is slow
+            setTimeout(function() {
+                const ctx = document.getElementById('enviosChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Out', 'Nov', 'Dez', 'Jan', 'Fev', 'Mar'],
+                        datasets: [{
+                            label: 'Envios',
+                            data: [15, 23, 18, 35, 28, 42],
+                            borderColor: '#0d6efd',
+                            backgroundColor: 'rgba(13, 110, 253, 0.08)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#fff',
+                            pointBorderColor: '#0d6efd',
+                            pointBorderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { 
+                                grid: { color: 'rgba(0,0,0,0.05)', drawBorder: false },
+                                ticks: { color: '#adb5bd', font: { size: 10 } }
+                            },
+                            x: { 
+                                grid: { display: false },
+                                ticks: { color: '#adb5bd', font: { size: 10 } }
+                            }
+                        }
+                    }
+                });
+                // Add a hidden element to signal completion to subagent
+                const done = document.createElement('div');
+                done.id = 'chart-ready';
+                document.body.appendChild(done);
+            }, 500);
+        });
+    </script>
+</body>
+</html>
