@@ -1,0 +1,52 @@
+# =========================
+# Operating System Files
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =========================
+# IDEs and Editors
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# =========================
+# Python (Scripts/Automation)
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/
+
+# =========================
+# Node / Javascript (if any UI components use npm)
+# =========================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# =========================
+# Temporary & Log Files
+# =========================
+*.log
+*.bak
+*.tmp
+/tmp/
+
+# Nota: A pasta `orcamentos_gerados/` NÃO está no gitignore 
+# pois as diretrizes exigem que ela seja mantida como backup e histórico.
+Git
+**/._*
+._*
