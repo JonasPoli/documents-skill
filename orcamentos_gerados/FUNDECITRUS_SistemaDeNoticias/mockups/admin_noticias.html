@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundecitrus — Gestão de Notícias</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+  :root { --verde: #008D36; --laranja: #F58220; --amarelo: #FDB913; }
+  body { background: #f0f2f5; font-family: 'Segoe UI', sans-serif; }
+  .sidebar { width: 240px; background: #fff; border-right: 1px solid #e0e0e0; min-height: 100vh; position: fixed; top: 0; left: 0; }
+  .sidebar-logo { padding: 18px 20px; border-bottom: 1px solid #e0e0e0; background: var(--verde); }
+  .sidebar-logo .logo-text { color: #fff; font-weight: 700; font-size: 15px; }
+  .sidebar-logo .sub { font-size: 10px; opacity: 0.85; color: #fff; }
+  .nav-section-label { padding: 8px 20px 4px; font-size: 10px; text-transform: uppercase; color: #aaa; letter-spacing: 1px; }
+  .nav-link-item { display: flex; align-items: center; gap: 10px; padding: 9px 20px; color: #444; text-decoration: none; font-size: 13.5px; border-left: 3px solid transparent; }
+  .nav-link-item:hover { background: #f5f5f5; color: var(--verde); }
+  .nav-link-item.active { background: #e8f5ee; color: var(--verde); border-left-color: var(--verde); font-weight: 600; }
+  .main-content { margin-left: 240px; padding: 24px; }
+  .topbar { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 0 24px; margin: -24px -24px 24px -24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-title { font-weight: 700; font-size: 15px; color: #222; }
+  .filter-bar { background: #fff; border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .content-card { background: #fff; border-radius: 10px; }
+  .table thead th { font-size: 11px; text-transform: uppercase; color: #999; font-weight: 700; border-bottom: 2px solid #f0f0f0; padding: 10px 12px; }
+  .table td { font-size: 13px; vertical-align: middle; padding: 10px 12px; }
+  .status-badge { border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .status-publicada { background: #e8f5ee; color: #008D36; }
+  .status-rascunho { background: #fff8e1; color: #f9a825; }
+  .status-revisao { background: #e3f2fd; color: #1565c0; }
+  .status-despublicada { background: #fce4ec; color: #c62828; }
+  .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--verde); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+  .img-thumb { width: 52px; height: 36px; object-fit: cover; border-radius: 5px; background: #e0e0e0; display: inline-block; }
+  .cat-badge { background: #f5f5f5; color: #555; border-radius: 20px; padding: 2px 10px; font-size: 11px; font-weight: 600; }
+  .action-btn { background: none; border: none; padding: 4px 6px; cursor: pointer; color: #aaa; }
+  .action-btn:hover { color: #222; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 0; }
+  .breadcrumb-item a { color: #008D36; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-text">FUNDECITRUS</div>
+    <div class="sub">Sistema de Notícias</div>
+  </div>
+  <nav>
+    <div class="nav-section-label mt-2">Principal</div>
+    <a class="nav-link-item"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a class="nav-link-item active"><i class="bi bi-newspaper"></i> Notícias</a>
+    <a class="nav-link-item"><i class="bi bi-tags"></i> Categorias</a>
+    <div class="nav-section-label mt-2">Administração</div>
+    <a class="nav-link-item"><i class="bi bi-people"></i> Usuários</a>
+    <a class="nav-link-item"><i class="bi bi-gear"></i> Configurações</a>
+  </nav>
+</div>
+
+<div class="main-content">
+  <div class="topbar">
+    <div>
+      <div class="topbar-title"><i class="bi bi-newspaper me-2 text-success"></i>Notícias</div>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <a href="#" class="btn btn-sm" style="background:#008D36;color:#fff;font-size:12px;"><i class="bi bi-plus"></i> Nova Notícia</a>
+      <div class="avatar">DE</div>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item active">Notícias</li>
+    </ol>
+  </nav>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="input-group" style="max-width:260px;">
+      <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted" style="font-size:12px;"></i></span>
+      <input type="text" class="form-control border-start-0" placeholder="Buscar por título..." style="font-size:12.5px;">
+    </div>
+    <select class="form-select form-select-sm" style="max-width:170px;font-size:12.5px;">
+      <option>Todos os Status</option>
+      <option>Publicada</option>
+      <option>Aguardando Revisão</option>
+      <option>Rascunho</option>
+      <option>Despublicada</option>
+    </select>
+    <select class="form-select form-select-sm" style="max-width:170px;font-size:12.5px;">
+      <option>Todas as Categorias</option>
+      <option>Doenças Citrícolas</option>
+      <option>Pesquisa e Inovação</option>
+      <option>Comunicados</option>
+      <option>Institucional</option>
+    </select>
+    <input type="date" class="form-control form-control-sm" style="max-width:145px;font-size:12.5px;">
+    <span class="text-muted" style="font-size:11px;">128 registros</span>
+  </div>
+
+  <!-- Table -->
+  <div class="content-card">
+    <table class="table table-hover mb-0">
+      <thead>
+        <tr>
+          <th style="width:50px;"></th>
+          <th>Título</th>
+          <th>Categoria</th>
+          <th>Autor</th>
+          <th>Status</th>
+          <th>Publicado em</th>
+          <th style="width:90px;">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="img-thumb" style="background:#c8e6c9;"></div></td>
+          <td><strong>Fundecitrus detecta novo pico de HLB em março</strong><br><small class="text-muted">O mapeamento realizado em fevereiro revelou...</small></td>
+          <td><span class="cat-badge">Doenças Citrícolas</span></td>
+          <td><div class="d-flex align-items-center gap-2"><div class="avatar" style="width:24px;height:24px;font-size:10px;">MA</div><span>M. Azevedo</span></div></td>
+          <td><span class="status-badge status-publicada">Publicada</span></td>
+          <td>24/03/2026</td>
+          <td>
+            <button class="action-btn" title="Editar"><i class="bi bi-pencil"></i></button>
+            <button class="action-btn" title="Visualizar"><i class="bi bi-eye"></i></button>
+            <button class="action-btn text-danger" title="Excluir"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="img-thumb" style="background:#fff9c4;"></div></td>
+          <td><strong>Relatório anual de produção citrícola 2025</strong><br><small class="text-muted">Os dados consolidados do levantamento anual...</small></td>
+          <td><span class="cat-badge">Pesquisa</span></td>
+          <td><div class="d-flex align-items-center gap-2"><div class="avatar avatar-orange" style="width:24px;height:24px;font-size:10px;background:#F58220;">DE</div><span>Denise</span></div></td>
+          <td><span class="status-badge status-publicada">Publicada</span></td>
+          <td>20/03/2026</td>
+          <td>
+            <button class="action-btn"><i class="bi bi-pencil"></i></button>
+            <button class="action-btn"><i class="bi bi-eye"></i></button>
+            <button class="action-btn text-danger"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="img-thumb" style="background:#e3f2fd;"></div></td>
+          <td><strong>Novas tecnologias de manejo integrado de pragas</strong><br><small class="text-muted">Pesquisadores apresentam resultados do uso de...</small></td>
+          <td><span class="cat-badge">Tecnologia</span></td>
+          <td><div class="d-flex align-items-center gap-2"><div class="avatar" style="width:24px;height:24px;font-size:10px;">RS</div><span>R. Silva</span></div></td>
+          <td><span class="status-badge status-revisao">Em Revisão</span></td>
+          <td>—</td>
+          <td>
+            <button class="action-btn"><i class="bi bi-pencil"></i></button>
+            <button class="action-btn"><i class="bi bi-eye"></i></button>
+            <button class="action-btn text-danger"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="img-thumb" style="background:#f5f5f5;"></div></td>
+          <td><strong>Comunicado sobre nova portaria fitossanitária</strong><br><small class="text-muted">A Secretaria de Agricultura publicou nesta semana...</small></td>
+          <td><span class="cat-badge">Comunicados</span></td>
+          <td><div class="d-flex align-items-center gap-2"><div class="avatar" style="width:24px;height:24px;font-size:10px;background:#F58220;">DE</div><span>Denise</span></div></td>
+          <td><span class="status-badge status-rascunho">Rascunho</span></td>
+          <td>—</td>
+          <td>
+            <button class="action-btn"><i class="bi bi-pencil"></i></button>
+            <button class="action-btn"><i class="bi bi-eye"></i></button>
+            <button class="action-btn text-danger"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="img-thumb" style="background:#ede7f6;"></div></td>
+          <td><strong>Parceria Fundecitrus e ESALQ traz resultados</strong><br><small class="text-muted">O projeto conjunto iniciado em 2024 gerou...</small></td>
+          <td><span class="cat-badge">Institucional</span></td>
+          <td><div class="d-flex align-items-center gap-2"><div class="avatar" style="width:24px;height:24px;font-size:10px;">MA</div><span>M. Azevedo</span></div></td>
+          <td><span class="status-badge status-publicada">Publicada</span></td>
+          <td>15/03/2026</td>
+          <td>
+            <button class="action-btn"><i class="bi bi-pencil"></i></button>
+            <button class="action-btn"><i class="bi bi-eye"></i></button>
+            <button class="action-btn text-danger"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="img-thumb" style="background:#fce4ec;"></div></td>
+          <td><strong>Levantamento ABC de pulgão-preto</strong><br><small class="text-muted">Os dados foram coletados durante o período...</small></td>
+          <td><span class="cat-badge">Pesquisa</span></td>
+          <td><div class="d-flex align-items-center gap-2"><div class="avatar" style="width:24px;height:24px;font-size:10px;">RS</div><span>R. Silva</span></div></td>
+          <td><span class="status-badge status-despublicada">Despublicada</span></td>
+          <td>01/02/2026</td>
+          <td>
+            <button class="action-btn"><i class="bi bi-pencil"></i></button>
+            <button class="action-btn"><i class="bi bi-eye"></i></button>
+            <button class="action-btn text-danger"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <small class="text-muted">Exibindo 1–6 de 128 registros</small>
+      <nav>
+        <ul class="pagination pagination-sm mb-0">
+          <li class="page-item disabled"><a class="page-link">Anterior</a></li>
+          <li class="page-item active"><a class="page-link" style="background:#008D36;border-color:#008D36;">1</a></li>
+          <li class="page-item"><a class="page-link">2</a></li>
+          <li class="page-item"><a class="page-link">3</a></li>
+          <li class="page-item"><a class="page-link">Próximo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</body>
+</html>

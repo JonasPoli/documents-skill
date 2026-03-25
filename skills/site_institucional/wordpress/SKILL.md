@@ -5,7 +5,7 @@ description: Cria orçamentos gigantescos e detalhados para sites WordPress inst
 
 # Skill: Gerador de Orçamento Site WordPress
 
-**REGRA DE OURO:** Seu dever como IA é **AMPLIAR E DETALHAR PROFUNDAMENTE** a resposta do usuário. Consulte os exemplos reais em `/Volumes/Dados/work/documentos/modelos/extracao_automatica/site institucional/`. **EXTRA:** Gere mockups visuais para a Home e formulário de Leads via `generate_ui_mockup.md`.
+**REGRA DE OURO (MÁXIMA PRIORIDADE):** O usuário usa um prompt muito curto. O SEU DEVER É EXPANDI-LO PARA UMA PROPOSTA COMERCIAL DE 10 PÁGINAS. Você está PROIBIDO de enviar respostas curtas. Aplique obrigatoriamente o **Template Estrito de Wireframe Textual** (do MASTER_TEMPLATE) para CADA página do site.
 
 ## 1. DESCOBERTA RÁPIDA
 Solicite apenas:
@@ -13,17 +13,17 @@ Solicite apenas:
 2. "Nome da Empresa?"
 3. "Estilo de Escrita Desejado? (Institucional Padrão, Focado em Conversão)."
 
-## 2. A EXPANSÃO TÉCNICA
-Ao gerar o documento, use as 8 seções obrigatórias do `MASTER_TEMPLATE.md` e crie conteúdo massivo.
+## 2. A EXPANSÃO TÉCNICA EM PASSOS (NÃO PULE NENHUM)
+Ao gerar o documento, use OBRIGATORIAMENTE as 8 seções do `MASTER_TEMPLATE.md`.
 
-**Como Expandir a Estrutura do Site:**
-Dê nomes reais às páginas (Home, Sobre a Empresa, Soluções/Serviços, Equipe, Blog, Contato).
-Escreva 2 ou mais parágrafos detalhando as seções (wireframe textual) que cada página terá.
-> "A Home Page será composta por um Header fixo com logotipo otimizado... Seguida de um Banner Hero full-width alternando imagens dos serviços em qualidade 4K... Abaixo, uma malha de blocos interativos em formato grid 3x3 apresentando o portfólio... Finalizando num rodapé com captura de Leads via Newsletter integrada à API."
+**PASSO 1: Estruturar Páginas Mínimas:** Você DEVE listar no mínimo 6 páginas reais (ex: Home, Sobre a Empresa, Soluções/Serviços, Portfólio, Blog, Contato).
+**PASSO 2: Aplicar o Template Textual:** Para CADA uma das 6 páginas do Passo 1, copie e cole a estrutura do "Template Estrito de Wireframe Textual".
+**REGRA MATEMÁTICA:** Nenhuma descrição de "Área Principal" pode ter menos que 3 linhas ou 4 características (ex: "grid 3x3", "logotipo otimizado", "banner hero full-width", "formulário de captura").
+**PASSO 3: Amplificar Benefícios:** Escreva 3 parágrafos robustos argumentando por que o WordPress é a escolha ideal para o SEO (cite Yoast/RankMath) e para o marketing do cliente. NUNCA resuma em apenas uma frase.
 
-## 3. TECNOLOGIA WORDPRESS
-Invente o argumento técnico de por que o WordPress é a escolha ideal (CMS fácil, SEO robusto com Yoast/RankMath, Temas/Plugins otimizados).
-Inclua a tabela de Condições Comerciais, as Cláusulas Rápidas e os Itens Não Inclusos.
+## 3. CONTEÚDO PADRÃO OBRIGATÓRIO
+Você DEVE incluir *ipsis litteris* a Tabela Comercial, Cláusulas e Itens Não Inclusos (ver master_template).
 
-## 4. SALVAMENTO
-Gere o arquivo `.md` completo (seja prolixo e profissional) e salve em `/Volumes/Dados/work/documentos/orcamentos_gerados/` como `WP_COMPLETO_[CLIENTE].md`.
+## 4. GERAÇÃO E SALVAMENTO
+Verifique internamente: "Meu texto está parecendo um resumo? Eu pulei alguma sessão?". Se sim, comece de novo e detalhe mais.
+Gere o arquivo `.md` completo (seja prolixo, técnico e longo) e salve em `/Volumes/Dados/work/documentos/orcamentos_gerados/` como `WP_COMPLETO_[CLIENTE].md`.

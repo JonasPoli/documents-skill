@@ -5,9 +5,9 @@ description: Cria orçamentos gigantescos, técnicos e comerciais para aplicaç�
 
 # Skill: Gerador de Orçamento Site Symfony (ARQUITETURA DE SISTEMAS)
 
-**REGRA DE OURO:** SISTEMAS SÃO DIFERENTES DE SITES. Você não deve usar a espinha dorsal comum. O seu trabalho é seguir estritamente o `/Volumes/Dados/work/documentos/skills/MASTER_TEMPLATE_SISTEMAS.md` e os arquivos de referência em `/Volumes/Dados/work/documentos/modelos/extracao_automatica/sistema/`.
+**REGRA SUPREMA:** Os blocos de texto boilerplate desta agência JÁ ESTÃO ESCRITOS como arquivos `.md` prontos. Sua tarefa é COPIAR O CONTEÚDO DELES PALAVRA POR PALAVRA para dentro do orçamento. Você NÃO deve reescrever, resumir ou parafrasear esses blocos. Copie o texto integral de cada arquivo conforme mapeado nesta Skill. Nenhuma criatividade ou interpretação deve ser usada no conteúdo dos blocos — eles são textos jurídico-comerciais da agência.
 
-Este processo possui **DUAS FASES OBRIGATÓRIAS**: Modelagem de Banco de Dados e Geração de Documento.
+---
 
 ## 1. DESCOBERTA RÁPIDA
 Solicite ao usuário:
@@ -15,35 +15,132 @@ Solicite ao usuário:
 2. "Nome da Empresa cliente?"
 3. "Existem tipos de usuários diferentes? (Ex: Admin, Funcionário, Cliente)?"
 
-## 2. FASE 1: A REGRA DAS ENTIDADES (OBRIGATÓRIO)
-**PARE E GERE ISSO PRIMEIRO.**
-Antes de pensar em front-end ou gerar o orçamento, você deve arquitetar as entidades.
-Gere o arquivo `ENTITIES_[CLIENTE].md` e salve na pasta do cliente (`/Volumes/Dados/work/documentos/orcamentos_gerados/[CLIENTE]/`).
-Este documento deve conter:
-- **Tabelas Principais / Entidades do Domínio**: Liste as tabelas, campos essenciais (Ex: Clientes: id, nome, cnpj, status).
-- **Tipos de Usuários (Roles)**: Defina controle de acesso (Ex: Admin vê tudo, Vendedor vê seus clientes).
-- **Mapeamento de CRUDs e Telas**: Baseado nas entidades, faça uma lista exaustiva de EXATAMENTE quais telas (html) você precisará codificar no Passo 3. 
-  - **ATENÇÃO À REGRA DO DATATABLE E MESTRE-DETALHE**: Se uma entidade possui filhos (ex: Cliente possui Projetos), você OBRIGATORIAMENTE deve listar uma tela de "Detalhes do Cliente" que lista os projetos dele. Toda listagem deve ter botões de ação contextuais.
+---
 
-## 3. FASE 2: PROTOCOLO DE PROTOTIPAGEM (TELAS)
-Usando a lista de telas gerada na Fase 1:
-1. Vá para `mockups/` dentro da pasta do cliente.
-2. Usando um design unificado (Sidebar/Footer consistentes), codifique TODAS as telas em HTML. A WAB não aceita orçamentos de sistema onde uma tela citada não tem imagem. **Se o sistema tem 15 áreas, você gera 15 mockups.**
-3. **DATATABLES E AÇÕES:** Nas telas de listagem, simule DataTables complexos. Se for a lista de "Clientes", coloque uma coluna "Ações" com botões [Editar], [Ver Projetos], [Detalhes]. 
-4. **TELA DE DETALHES:** Para entidades mestres (ex: Cliente), a tela de "Visualização" NÃO é o formulário de edição. É uma tela de Detalhes que possui informações do cliente no topo e um DataTable embutido com seus filhos (Projetos) e um botão [Novo Projeto]. Verifique todo o fluxo (para onde cada botão aponta) antes de seguir.
-5. Capture todos os prints.
+## 2. FASE 1: MODELAGEM DE ENTIDADES (OBRIGATÓRIO — EXECUTAR ANTES DO ORÇAMENTO)
+Gere o arquivo `ENTITIES_[CLIENTE].md` em `/Volumes/Dados/work/documentos/orcamentos_gerados/[CLIENTE]/`.
 
-## 4. FASE 3: A EXPANSÃO DO ORÇAMENTO (O CORE)
-Ao gerar o documento final (MD e HTML), obrigatoriamente siga as **13 seções do MASTER_TEMPLATE_SISTEMAS.md**.
+**Passo 1.1:** Liste todas as Tabelas/Entidades do banco, seus campos e roles.
+**Passo 1.2:** A REGRA MATEMATICA DE TELAS. Para CADA entidade mestre, defina obrigatoriamente:
+- 1 Tela de Listagem (DataTable com colunas de busca e coluna de Ações).
+- 1 Tela de Formulário de Cadastro/Edição.
+- 1 Tela de Detalhes Master-Detail (se a entidade tiver filhos).
 
-**Instruções Específicas para as 13 Seções:**
-- **Início**: Mínimo de 4 parágrafos de storytelling sobre o problema do cliente.
-- **Escopo e Módulos**: Divida por Tipos de Usuário. Cole as imagens capturadas na Fase 2. Explique a lógica de negócio por trás de cada tela (ex: "O grid possui filtros AJAX para CNPJ").
-- **Relatórios**: Pense em relatórios inteligentes que o Symfony pode gerar (PDF/Excel) cruzando os dados das Entidades.
-- **Condições de SLA e Hospedagem**: Utilize o boilerplate padrão da WAB (Hospedagem Inicial 10GB/1GB = R$ 1.430, SLA de 2h/4h/8h, Suporte Técnico).
-- **Condições Comerciais e Hora Técnica**: Especifique a hora a R$ 220,00 e plano de pagamento 30/30/30/10.
+---
 
-## 5. GERAÇÃO E SALVAMENTO FINAL
-- Gere o `ORCAMENTO_SYMFONY_[CLIENTE].md` e o `ORCAMENTO_SYMFONY_[CLIENTE].html`.
-- Garanta que as imagens estejam incorporadas (Base64) ou linkadas de forma que funcionem perfeitamente ao colar no Google Docs.
-- **ATENÇÃO AO ARQUIVO HTML**: O arquivo HTML DEVE conter tags HTML reais e semânticas (`<h1>`, `<h2>`, `<p>`, `<table>`, `<div class="mockup">`, etc) com CSS limpo. **NUNCA** apenas envolva texto Markdown cru em uma tag `<pre>` ou injete markdown não-processado dentro do `.html`. Ele deve ser um documento rico formatado para exibição visual imediata no navegador.
+## 3. FASE 2: GERAÇÃO DO ORÇAMENTO (14 SEÇÕES EM ORDEM)
+
+O arquivo final é `ORCAMENTO_SYMFONY_[CLIENTE].md`. Siga esta ordem EXATA. Use o MASTER_TEMPLATE_SISTEMAS.md como referência das seções.
+
+> [!CAUTION]
+> **PROIBIDO usar emojis, ícones ou símbolos especiais** nos textos gerados. Consulte `diretrizes.md`.
+
+---
+
+### SECAO 1: Apresentação Institucional (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/00_apresentacao.md` e cole o conteúdo integral aqui. NÃO REESCREVA. NÃO RESUMA. COPIE PALAVRA POR PALAVRA. Esta é a primeira seção do documento.
+
+---
+
+### SECAO 2: Início (CONTEUDO GERADO PELA IA)
+Escreva exatamente 4 parágrafos de storytelling técnico descrevendo o problema do cliente e a solução da WAB, a partir do input do usuário.
+
+---
+
+### SECAO 3: Escopo e Módulos (CONTEUDO GERADO PELA IA)
+Esta é a seção mais importante. Use o Template Estrito de Wireframe Textual para cada tela derivada da Fase 1.
+
+Estrutura de cada tela:
+```
+### Tela: [Nome da Tela]
+
+**Objetivo Estratégico:**
+[1 parágrafo longo explicando a finalidade]
+
+**Estrutura de Componentes e Layout:**
+- **Cabecalho/Navegação:** [descrição dos menus e breadcrumbs]
+- **Área Principal (Conteúdo):** [grid, campos, colunas do DataTable — MÍNIMO 4 campos citados]
+- **Botões e Ações:** [lista de botões com textos exatos, ex: [Salvar], [Cancelar], [Ver Detalhes]]
+
+**Fluxo de Interação e Regras:**
+[1 parágrafo explicando o que acontece ao usar a tela]
+```
+
+---
+
+### SECAO 4: Itens Não Inclusos (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/01_itens_nao_inclusos.md` e cole o conteúdo integral aqui. NÃO REESCREVA. NÃO RESUMA. COPIE PALAVRA POR PALAVRA.
+
+---
+
+### SECAO 5: Planejamento e Metodologia + Change Request (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/02_planejamento_metodologia.md` e cole o conteúdo integral. Em seguida, abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/02_regras_change_request.md` e cole o conteúdo integral. NÃO REESCREVA. NÃO RESUMA.
+
+---
+
+### SECAO 6: Garantia e SLA (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/03_garantia_sla.md` e cole o conteúdo integral aqui. NÃO REESCREVA. NÃO RESUMA. COPIE PALAVRA POR PALAVRA.
+
+---
+
+### SECAO 7: Transição e Treinamento (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/04_transicao_treinamento.md` e cole o conteúdo integral aqui. NÃO REESCREVA. NÃO RESUMA. COPIE PALAVRA POR PALAVRA.
+
+---
+
+### SECAO 8: Hospedagem (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/05_hospedagem_inicial.md` e cole o conteúdo integral aqui. NÃO REESCREVA. NÃO RESUMA. COPIE PALAVRA POR PALAVRA. REMOVA o diagrama Mermaid deste bloco, pois usaremos a versão de alta fidelidade na próxima seção.
+
+---
+
+### SECAO 9: Mapa da Estrutura (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/08_mapa_da_estrutura.md` e cole o conteúdo integral aqui. Este bloco contém o diagrama de arquitetura de alta fidelidade (Base64). COPIE PALAVRA POR PALAVRA.
+
+---
+
+### SECAO 10: Plano de Manutenção Contínua (COPIAR VERBATIM)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/07_plano_manutencao.md` e cole o conteúdo integral aqui. NÃO REESCREVA. NÃO RESUMA. COPIE PALAVRA POR PALAVRA.
+
+---
+
+### SECAO 11: Prazo, Deslocamento e Material (CONTEUDO GERADO PELA IA)
+- **Prazo:** Estime o prazo em semanas baseado na complexidade do escopo.
+- **Material:** Liste os documentos que o cliente precisa entregar.
+
+---
+
+### SECAO 12: Cronograma (CONTEUDO GERADO PELA IA)
+Tabela Markdown com colunas: Fase, Atividade Principal, Período (em semanas).
+
+---
+
+### SECAO 13: Validade da Proposta (CONTEUDO GERADO PELA IA)
+Informe que a validade da proposta é de 15 dias corridos.
+
+---
+
+### SECAO 14: Condições Comerciais (COPIAR VERBATIM + Tabela de Investimento)
+> **INSTRUCAO CRITICA:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/06_condicoes_comerciais.md` e cole o conteúdo integral incluindo a tabela de plano de pagamento e o bloco de assinatura com os dados da WAB. NÃO REESCREVA. NÃO RESUMA. Antes do conteúdo do bloco, insira também:
+> - Uma tabela Markdown de Investimento em Desenvolvimento com os módulos do sistema e seus valores estimados.
+> - Uma linha de total geral.
+> - Substitua `[NOME_DO_CLIENTE]` pelo nome real do cliente.
+
+---
+
+## 4. VERIFICACAO FINAL ANTES DE SALVAR
+Antes de salvar o arquivo, confirme mentalmente:
+- [ ] `00_apresentacao.md` foi copiada como a SEÇÃO 1?
+- [ ] O Stories da SEÇÃO 2 reflete o problema do cliente?
+- [ ] O bloco `01_itens_nao_inclusos.md` foi copiado integralmente?
+- [ ] O bloco `02_planejamento_metodologia.md` foi copiado integralmente?
+- [ ] O bloco `02_regras_change_request.md` foi copiado integralmente?
+- [ ] O bloco `03_garantia_sla.md` foi copiado integralmente com a tabela de SLA?
+- [ ] O bloco `04_transicao_treinamento.md` foi copiado integralmente?
+- [ ] O bloco `05_hospedagem_inicial.md` foi copiado integralmente (sem o Mermaid)?
+- [ ] O bloco `08_mapa_da_estrutura.md` foi copiado integralmente (com imagem Base64)?
+- [ ] O bloco `07_plano_manutencao.md` foi copiado integralmente?
+- [ ] O bloco `06_condicoes_comerciais.md` foi copiado integralmente com assinatura da WAB?
+- [ ] O arquivo final NÃO contém emojis nem ícones?
+- [ ] O arquivo final NÃO contém reticências (...) ou "etc"?
+
+Salve em `/Volumes/Dados/work/documentos/orcamentos_gerados/[CLIENTE]_[PROJETO]/ORCAMENTO_SYMFONY_[CLIENTE].md`.

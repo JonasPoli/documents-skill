@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundecitrus — Portal de Notícias</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+  :root { --verde: #008D36; --laranja: #F58220; --amarelo: #FDB913; }
+  body { font-family: 'Segoe UI', sans-serif; background: #fafafa; }
+  /* Header */
+  .site-header { background: #fff; border-bottom: 3px solid var(--verde); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+  .navbar-brand img { height: 44px; }
+  .nav-link { font-size: 13.5px; font-weight: 500; color: #333 !important; }
+  .nav-link:hover { color: var(--verde) !important; }
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #005a22 0%, #008D36 60%, #00a842 100%); color: #fff; padding: 52px 0 42px; }
+  .hero .category-badge { background: var(--amarelo); color: #222; padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 14px; }
+  .hero h1 { font-size: 30px; font-weight: 800; line-height: 1.25; margin-bottom: 12px; }
+  .hero p.lead { font-size: 15px; opacity: 0.9; }
+  .hero-meta { font-size: 12px; opacity: 0.75; margin-top: 18px; }
+  .hero-img { border-radius: 12px; overflow: hidden; background: #00612a; min-height: 210px; display: flex; align-items: center; justify-content: center; }
+  .hero-img-placeholder { font-size: 60px; opacity: 0.2; color: #fff; }
+  .btn-read { background: var(--laranja); color: #fff; border: none; padding: 10px 22px; border-radius: 8px; font-weight: 600; font-size: 13.5px; }
+  .btn-read:hover { background: #d96e15; color: #fff; }
+  /* Filters strip */
+  .filters-strip { background: #fff; border-bottom: 1px solid #e8e8e8; padding: 10px 0; }
+  .filter-pill { padding: 5px 16px; border-radius: 20px; background: #f0f0f0; color: #555; font-size: 12.5px; font-weight: 500; cursor: pointer; border: 2px solid transparent; text-decoration: none; }
+  .filter-pill:hover, .filter-pill.active { background: var(--verde); color: #fff; border-color: var(--verde); }
+  /* News Grid */
+  .section-title { font-size: 18px; font-weight: 800; color: #222; border-left: 4px solid var(--verde); padding-left: 12px; }
+  .news-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.06); transition: transform .15s, box-shadow .15s; height: 100%; display: flex; flex-direction: column; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.1); }
+  .news-card-img { height: 150px; object-fit: cover; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 36px; color: #bbb; }
+  .news-card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+  .news-cat { font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--verde); margin-bottom: 6px; letter-spacing: 0.5px; }
+  .news-title { font-size: 14px; font-weight: 700; color: #222; margin-bottom: 8px; line-height: 1.35; }
+  .news-excerpt { font-size: 12.5px; color: #666; flex: 1; line-height: 1.5; }
+  .news-date { font-size: 11px; color: #aaa; margin-top: 10px; }
+  /* Search bar */
+  .search-bar { background: #fff; border-radius: 50px; padding: 8px 16px; box-shadow: 0 2px 12px rgba(0,0,0,.1); display: flex; align-items: center; max-width: 480px; }
+  .search-bar input { border: none; outline: none; flex: 1; font-size: 13.5px; background: transparent; }
+  .search-bar button { background: var(--verde); color: #fff; border: none; border-radius: 50px; padding: 5px 16px; font-size: 13px; }
+  /* Footer */
+  .site-footer { background: #1a1a1a; color: #aaa; padding: 24px 0; font-size: 12.5px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header sticky-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light py-2">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div style="width:42px;height:42px;background:var(--verde);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:13px;">FDC</div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#008D36;line-height:1.1;">FUNDECITRUS</div>
+          <div style="font-size:10px;color:#888;">Notícias e Pesquisas</div>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" style="color:var(--verde) !important;" href="#">Notícias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pesquisas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Comunicados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+        </ul>
+        <div class="ms-3">
+          <div class="search-bar">
+            <i class="bi bi-search text-muted me-2" style="font-size:13px;"></i>
+            <input placeholder="Buscar notícias...">
+            <button>Buscar</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-7">
+        <span class="category-badge">Doenças Citrícolas</span>
+        <h1>Fundecitrus detecta novo pico de HLB na safra de verão</h1>
+        <p class="lead">O mapeamento realizado em fevereiro revelou aumento de 12% nos índices de infestação nas regiões Norte e Noroeste do Estado de São Paulo, exigindo atenção redobrada dos citricultores.</p>
+        <div class="d-flex align-items-center gap-3 mt-4">
+          <a href="#" class="btn btn-read">Leia a notícia completa</a>
+          <div class="hero-meta">
+            <i class="bi bi-calendar2 me-1"></i>24 de março de 2026 &nbsp;|&nbsp; <i class="bi bi-clock me-1"></i>5 min de leitura
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="hero-img d-flex align-items-center justify-content-center">
+          <i class="bi bi-image hero-img-placeholder"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filters -->
+<div class="filters-strip">
+  <div class="container">
+    <div class="d-flex gap-2 flex-wrap align-items-center">
+      <span style="font-size:12px;color:#999;font-weight:600;margin-right:4px;">FILTRAR:</span>
+      <a class="filter-pill active" href="#">Todas</a>
+      <a class="filter-pill" href="#">Doenças Citrícolas</a>
+      <a class="filter-pill" href="#">Pesquisa e Inovação</a>
+      <a class="filter-pill" href="#">Comunicados</a>
+      <a class="filter-pill" href="#">Institucional</a>
+      <a class="filter-pill" href="#">Tecnologia</a>
+    </div>
+  </div>
+</div>
+
+<!-- News Grid -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title mb-4">Últimas Notícias</h2>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <div class="news-card-img" style="background:#c8e6c9;"><i class="bi bi-image"></i></div>
+          <div class="news-card-body">
+            <div class="news-cat">Pesquisa e Inovação</div>
+            <div class="news-title">Relatório anual de produção citrícola 2025 apresenta crescimento de 8%</div>
+            <div class="news-excerpt">Os dados consolidados do levantamento anual confirmam a recuperação do setor após dois anos de adversidades climáticas...</div>
+            <div class="news-date"><i class="bi bi-calendar2 me-1"></i>20 de março de 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <div class="news-card-img" style="background:#fff9c4;"><i class="bi bi-image"></i></div>
+          <div class="news-card-body">
+            <div class="news-cat">Tecnologia</div>
+            <div class="news-title">Novas tecnologias de manejo integrado de pragas entram em fase piloto</div>
+            <div class="news-excerpt">Pesquisadores apresentam resultados do uso drone+IA para detecção precoce de infestações em pomares de laranja...</div>
+            <div class="news-date"><i class="bi bi-calendar2 me-1"></i>18 de março de 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <div class="news-card-img" style="background:#ede7f6;"><i class="bi bi-image"></i></div>
+          <div class="news-card-body">
+            <div class="news-cat">Institucional</div>
+            <div class="news-title">Parceria Fundecitrus e ESALQ completa o primeiro ano com avanços significativos</div>
+            <div class="news-excerpt">O projeto conjunto iniciado em 2024 gerou resultados expressivos no mapeamento genético das variedades mais resistentes ao greening...</div>
+            <div class="news-date"><i class="bi bi-calendar2 me-1"></i>15 de março de 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <div class="news-card-img" style="background:#ffccbc;"><i class="bi bi-image"></i></div>
+          <div class="news-card-body">
+            <div class="news-cat">Comunicados</div>
+            <div class="news-title">Secretaria publica nova portaria sobre controle de psilídeo-asiático</div>
+            <div class="news-excerpt">A medida afeta produtores das regiões de Bebedouro, Monte Azul Paulista e Barretos, exigindo notificação dos talhões afetados...</div>
+            <div class="news-date"><i class="bi bi-calendar2 me-1"></i>12 de março de 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <div class="news-card-img" style="background:#b3e5fc;"><i class="bi bi-image"></i></div>
+          <div class="news-card-body">
+            <div class="news-cat">Pesquisa e Inovação</div>
+            <div class="news-title">Levantamento de pulgão-preto revela queda de 20% nos pomares monitorados</div>
+            <div class="news-excerpt">Os dados foram coletados em 450 propriedades da região central do Estado durante o período de janeiro a fevereiro de 2026...</div>
+            <div class="news-date"><i class="bi bi-calendar2 me-1"></i>08 de março de 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="news-card">
+          <div class="news-card-img" style="background:#f0f4c3;"><i class="bi bi-image"></i></div>
+          <div class="news-card-body">
+            <div class="news-cat">Doenças Citrícolas</div>
+            <div class="news-title">Fundecitrus lança guia de boas práticas para controle do cancro cítrico</div>
+            <div class="news-excerpt">O guia, disponível gratuitamente para download, reúne protocolos científicos para redução da dispersão da doença...</div>
+            <div class="news-date"><i class="bi bi-calendar2 me-1"></i>05 de março de 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center mt-5">
+      <nav>
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link">Anterior</a></li>
+          <li class="page-item active"><a class="page-link" style="background:var(--verde);border-color:var(--verde);">1</a></li>
+          <li class="page-item"><a class="page-link">2</a></li>
+          <li class="page-item"><a class="page-link">3</a></li>
+          <li class="page-item"><a class="page-link">...</a></li>
+          <li class="page-item"><a class="page-link">12</a></li>
+          <li class="page-item"><a class="page-link">Próximo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <span>© 2026 Fundecitrus — Fundo de Defesa da Citricultura</span>
+    <span>Desenvolvido por <strong style="color:#fff;">WAB Agência Digital</strong></span>
+  </div>
+</footer>
+
+</body>
+</html>

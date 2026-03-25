@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundecitrus News — Painel Administrativo</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+  :root {
+    --verde: #008D36;
+    --laranja: #F58220;
+    --amarelo: #FDB913;
+  }
+  body { background: #f0f2f5; font-family: 'Segoe UI', sans-serif; }
+  .sidebar {
+    width: 240px; background: #fff; border-right: 1px solid #e0e0e0;
+    min-height: 100vh; position: fixed; top: 0; left: 0; z-index: 100;
+    display: flex; flex-direction: column;
+  }
+  .sidebar-logo {
+    padding: 18px 20px; border-bottom: 1px solid #e0e0e0;
+    display: flex; align-items: center; gap: 10px;
+    background: var(--verde);
+  }
+  .sidebar-logo .logo-text { color: #fff; font-weight: 700; font-size: 15px; line-height: 1.2; }
+  .sidebar-logo .sub { font-size: 10px; opacity: 0.85; }
+  .sidebar-nav { padding: 12px 0; flex: 1; }
+  .nav-section-label { padding: 8px 20px 4px; font-size: 10px; text-transform: uppercase; color: #aaa; letter-spacing: 1px; }
+  .nav-link-item { display: flex; align-items: center; gap: 10px; padding: 9px 20px; color: #444; text-decoration: none; font-size: 13.5px; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link-item:hover { background: #f5f5f5; color: var(--verde); }
+  .nav-link-item.active { background: #e8f5ee; color: var(--verde); border-left-color: var(--verde); font-weight: 600; }
+  .nav-link-item i { font-size: 16px; }
+  .main-content { margin-left: 240px; padding: 24px; }
+  .topbar { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 0 24px; margin: -24px -24px 24px -24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .topbar-title { font-weight: 700; font-size: 15px; color: #222; }
+  .badge-ativo { background: #e8f5ee; color: var(--verde); font-size: 11px; font-weight: 600; border-radius: 20px; padding: 3px 10px; }
+  .stat-card { border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+  .stat-card .stat-value { font-size: 28px; font-weight: 700; }
+  .stat-card .stat-label { font-size: 12px; color: #666; }
+  .stat-card .stat-icon { font-size: 28px; opacity: 0.15; position: absolute; right: 16px; bottom: 12px; }
+  .card-verde { background: linear-gradient(135deg, #008D36 0%, #00a842 100%); color: #fff; position: relative; overflow: hidden; }
+  .card-laranja { background: linear-gradient(135deg, #F58220 0%, #ff9f3f 100%); color: #fff; position: relative; overflow: hidden; }
+  .card-amarelo { background: linear-gradient(135deg, #FDB913 0%, #ffc83d 100%); color: #fff; position: relative; overflow: hidden; }
+  .card-cinza { background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%); color: #fff; position: relative; overflow: hidden; }
+  .table-card { background: #fff; border-radius: 10px; padding: 20px; }
+  .table thead th { font-size: 12px; text-transform: uppercase; color: #999; font-weight: 600; border-bottom: 2px solid #f0f0f0; }
+  .table td { font-size: 13.5px; vertical-align: middle; }
+  .status-badge { border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 600; }
+  .status-publicada { background: #e8f5ee; color: #008D36; }
+  .status-rascunho { background: #fff8e1; color: #f9a825; }
+  .status-revisao { background: #e3f2fd; color: #1565c0; }
+  .status-despublicada { background: #fce4ec; color: #c62828; }
+  .avatar { width: 30px; height: 30px; border-radius: 50%; background: #008D36; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+  .avatar-orange { background: var(--laranja); }
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <div>
+      <div class="logo-text">FUNDECITRUS</div>
+      <div class="logo-text sub">Sistema de Notícias</div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Principal</div>
+    <a class="nav-link-item active"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a class="nav-link-item"><i class="bi bi-newspaper"></i> Notícias</a>
+    <a class="nav-link-item"><i class="bi bi-tags"></i> Categorias</a>
+    <div class="nav-section-label mt-2">Administração</div>
+    <a class="nav-link-item"><i class="bi bi-people"></i> Usuários</a>
+    <a class="nav-link-item"><i class="bi bi-gear"></i> Configurações</a>
+    <div style="margin-top: auto;"></div>
+    <a class="nav-link-item mt-4" style="color: #c62828;"><i class="bi bi-box-arrow-right"></i> Sair</a>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main-content">
+  <!-- Topbar -->
+  <div class="topbar">
+    <span class="topbar-title"><i class="bi bi-speedometer2 me-2 text-success"></i>Dashboard</span>
+    <div class="d-flex align-items-center gap-3">
+      <span class="badge-ativo"><i class="bi bi-circle-fill me-1" style="font-size:7px;"></i>Sistema On-line</span>
+      <div class="avatar">DE</div>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="stat-card card-verde">
+        <div class="stat-label">Total de Notícias</div>
+        <div class="stat-value">128</div>
+        <div class="stat-icon"><i class="bi bi-newspaper"></i></div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card card-laranja">
+        <div class="stat-label">Publicadas</div>
+        <div class="stat-value">114</div>
+        <div class="stat-icon"><i class="bi bi-check-circle"></i></div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card card-amarelo">
+        <div class="stat-label">Aguardando Revisão</div>
+        <div class="stat-value">8</div>
+        <div class="stat-icon"><i class="bi bi-hourglass-split"></i></div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card card-cinza">
+        <div class="stat-label">Rascunhos</div>
+        <div class="stat-value">6</div>
+        <div class="stat-icon"><i class="bi bi-file-earmark-text"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table + Quick Actions -->
+  <div class="row g-3">
+    <div class="col-md-8">
+      <div class="table-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h6 class="fw-bold mb-0">Últimas Notícias Publicadas</h6>
+          <a href="#" class="btn btn-sm" style="background:#008D36;color:#fff;font-size:12px;">+ Nova Notícia</a>
+        </div>
+        <table class="table table-hover table-sm mb-0">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Categoria</th>
+              <th>Status</th>
+              <th>Publicado em</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fundecitrus detecta novo pico de HLB em março</td>
+              <td><span class="badge bg-light text-dark">Doenças</span></td>
+              <td><span class="status-badge status-publicada">Publicada</span></td>
+              <td>24/03/2026</td>
+              <td><a href="#" class="text-secondary"><i class="bi bi-pencil-square"></i></a></td>
+            </tr>
+            <tr>
+              <td>Relatório anual de produção citrícola 2025</td>
+              <td><span class="badge bg-light text-dark">Pesquisa</span></td>
+              <td><span class="status-badge status-publicada">Publicada</span></td>
+              <td>20/03/2026</td>
+              <td><a href="#" class="text-secondary"><i class="bi bi-pencil-square"></i></a></td>
+            </tr>
+            <tr>
+              <td>Novas tecnologias de manejo integrado</td>
+              <td><span class="badge bg-light text-dark">Tecnologia</span></td>
+              <td><span class="status-badge status-revisao">Em Revisão</span></td>
+              <td>—</td>
+              <td><a href="#" class="text-secondary"><i class="bi bi-pencil-square"></i></a></td>
+            </tr>
+            <tr>
+              <td>Comunicado sobre nova portaria fitossanitária</td>
+              <td><span class="badge bg-light text-dark">Comunicados</span></td>
+              <td><span class="status-badge status-rascunho">Rascunho</span></td>
+              <td>—</td>
+              <td><a href="#" class="text-secondary"><i class="bi bi-pencil-square"></i></a></td>
+            </tr>
+            <tr>
+              <td>Parceria Fundecitrus e ESALQ traz resultados</td>
+              <td><span class="badge bg-light text-dark">Institucional</span></td>
+              <td><span class="status-badge status-publicada">Publicada</span></td>
+              <td>15/03/2026</td>
+              <td><a href="#" class="text-secondary"><i class="bi bi-pencil-square"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="table-card mb-3">
+        <h6 class="fw-bold mb-3">Categorias Mais Ativas</h6>
+        <div class="d-flex flex-column gap-2">
+          <div class="d-flex justify-content-between">
+            <span style="font-size:13px;">Doenças Citrícolas</span>
+            <span class="badge" style="background:#e8f5ee;color:#008D36;">42 notícias</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span style="font-size:13px;">Pesquisa e Inovação</span>
+            <span class="badge" style="background:#e8f5ee;color:#008D36;">31 notícias</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span style="font-size:13px;">Institucional</span>
+            <span class="badge" style="background:#e8f5ee;color:#008D36;">22 notícias</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span style="font-size:13px;">Comunicados</span>
+            <span class="badge" style="background:#e8f5ee;color:#008D36;">18 notícias</span>
+          </div>
+        </div>
+      </div>
+      <div class="table-card">
+        <h6 class="fw-bold mb-3">Ações Rápidas</h6>
+        <div class="d-grid gap-2">
+          <button class="btn btn-sm text-start" style="background:#008D36;color:#fff;"><i class="bi bi-plus-circle me-2"></i>Nova Notícia</button>
+          <button class="btn btn-sm btn-outline-secondary text-start"><i class="bi bi-tags me-2"></i>Nova Categoria</button>
+          <button class="btn btn-sm btn-outline-secondary text-start"><i class="bi bi-people me-2"></i>Novo Usuário</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
