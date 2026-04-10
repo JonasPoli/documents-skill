@@ -1,16 +1,16 @@
 ---
-name: Gerador de Orçamento Previsão de Custos (ESTUDO DE VIABILIDADE)
-description: Orçamento preliminar e análise financeira para projetos de larga escala.
+name: Gerador de Orçamento Previsão de Custos (Análise de Investimento)
+description: Cria uma análise financeira e de viabilidade para projetos grandes.
 ---
 
 # Skill: Gerador de Orçamento Sistema (Previsão de Custos)
 
-Este documento é um guia de investimento para o C-Level do cliente.
+Este documento funciona como um guia de investimento para a diretoria da empresa.
 
 ## 1. ESTRUTURA DA ANÁLISE
-- **Custos de Infraestrutura Escalável**: Detalhe os custos de nuvem (AWS/Azure/Google Cloud) conforme o projeto cresce.
-- **Custos de Terceiros e Licenciamento**: APIs, Mapas, Gateways de Pagamento.
-- **Estimativa de Manutenção Evolutiva**: Previsão de custos para os primeiros 12 meses.
+- **Custos de Estrutura e Servidores**: Detalhe os custos de servidores na nuvem (AWS, Google ou outros) conforme o sistema for crescendo.
+- **Custos de Outros Serviços**: Pagamentos para serviços de mapas, pagamentos online ou outras ferramentas necessárias.
+- **Estimativa de Manutenção e Melhorias**: Previsão de quanto será investido para manter o sistema atualizado nos primeiros 12 meses.
 
-## 2. SALVAMENTO
+## 2. FINALIZAÇÃO
 Salve como `PREVISAO_CUSTOS_[CLIENTE].md`.

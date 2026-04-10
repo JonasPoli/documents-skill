@@ -1,6 +1,6 @@
-## MAPA DA ESTRUTURA
+## Organização da Estrutura
 
-Abaixo segue um mapa de como planejamos montar a estrutura física que conterá o sistema:
+Veja abaixo como planejamos organizar a estrutura física onde o seu sistema ficará instalado:
 
 # **![][image1]![][image2]**
 

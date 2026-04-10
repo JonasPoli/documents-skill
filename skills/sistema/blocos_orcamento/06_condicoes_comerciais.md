@@ -1,27 +1,25 @@
-## CONDIÇÕES COMERCIAIS E FINANCEIRAS
+## Valores e Formas de Pagamento
 
-### Plano de Pagamento
-O pagamento pelo desenvolvimento do sistema será dividido em marcos de entrega (milestones), conforme a tabela abaixo:
+O pagamento pelo desenvolvimento do sistema será dividido em etapas, conforme os resultados entregues:
 
-| Etapa de Pagamento | Descrição | Percentual |
+| Etapa de Pagamento | O que está sendo entregue | Percentual |
 | :--- | :--- | :--- |
-| **Sinal/Início** | Na assinatura desta Proposta e início do desenvolvimento. | 40% |
-| **Entrega Fase Frontend** | Na conclusão e homologação de todo o Layout e Fluxo de Telas. | 30% |
-| **Go-Live e Encerramento** | Após o Go-Live e liberação do banco em produção. | 30% |
+| **Sinal / Início** | Na assinatura desta proposta e início dos trabalhos. | 40% |
+| **Entrega do Visual** | Quando todo o layout e o fluxo das telas forem aprovados. | 30% |
+| **Entrega Final** | Após o sistema ser colocado no ar para uso definitivo. | 30% |
 | **Total** | | **100%** |
 
 ---
 
 <br><br><br>
 
-**Pela CONTRATADA:**  
+**Pela WAB Agência Digital:**  
 Jonas Ernesto Poli  
-CPF: 296.652.468-52  
 WAB Agência Digital / M. DUDALSKI & CIA SOLUÇÕES EM INTERNET  
 
 <br><br><br>
 
-**Pelo CONTRATANTE:**  
+**Pelo Cliente:**  
 ____________________________________  
 **[NOME_DO_CLIENTE]**  
-CPF/CNPJ: _________________  
+CPF/CNPJ: _________________

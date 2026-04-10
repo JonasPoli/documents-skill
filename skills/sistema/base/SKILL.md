@@ -1,135 +1,130 @@
 ---
-name: Gerador de Orçamento Sistema (EXPANSÃO MASSIVA)
-description: Transforma uma explicação curta do usuário em um orçamento de sistema enorme (15+ páginas), detalhado e modular.
+name: Gerador de Orçamento de Sistema (Detalhamento Completo)
+description: Transforma informações simples do usuário em uma proposta de sistema completa, detalhada e bem organizada.
 ---
 
-# Skill: Gerador de Orçamento Sistema (Desenvolvimento)
+# Skill: Gerador de Orçamento de Sistema (Desenvolvimento)
 
-**REGRA SUPREMA:** Os blocos de texto boilerplate desta agência JÁ ESTÃO ESCRITOS como arquivos `.md` prontos em `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/`. Sua tarefa é COPIAR O CONTEÚDO DELES PALAVRA POR PALAVRA para dentro do orçamento. Você NÃO deve reescrever, resumir ou parafrasear esses blocos. Eles são textos jurídico-comerciais da agência e qualquer alteração compromete contratos.
+**INSTRUÇÃO DE ESTILO:** Antes de começar, leia fielmente o arquivo `skills/forma-de-escrever.md` para garantir que o vocabulário e o tom de voz estejam atualizados.
 
-**REGRA ANTI-RESUMO:** É PROIBIDO usar "...", "etc", resumir módulos ou omitir campos que o usuário citou. Transcreva 100% dos campos e funcionalidades informados.
+**REGRA DE OURO:** Os blocos de texto padrão da agência já estão prontos em arquivos `.md`. Sua tarefa é COPIAR O CONTEÚDO DELES EXATAMENTE como estão para dentro do orçamento. Você NÃO deve reescrever ou resumir esse blocos. Os textos são padronizados e fundamentais para a segurança comercial e jurídica da agência.
 
-**REGRA DE ÍCONES:** Não use emojis ou ícones (proibido por `diretrizes.md`).
+**REGRA DE DETALHAMENTO:** Não utilize pontos suspensivos ("..."), "etc", nem resuma as funções do sistema. Apresente de forma completa todos os pontos que o usuário informou.
+
+**REGRA DE VISUAL:** Não use ícones ou emojis. Siga uma apresentação limpa e profissional.
 
 ---
 
-## 1. DESCOBERTA
+## 1. ENTENDIMENTOS INICIAIS
 Pergunte ao usuário:
-1. "Resuma o problema que o sistema vai resolver e cite as principais entidades."
-2. "Nome do Cliente e Tom Desejado."
+1. "Qual o objetivo principal do sistema e o que ele irá gerenciar?"
+2. "Qual o nome do cliente e o tom de voz do texto?"
 
 ---
 
-## 2. MODELAGEM DE ENTIDADES (PASSO INTERNO)
-Antes do orçamento, liste mentalmente todas as entidades e aplique:
-- Para CADA entidade: 1 Tela de Listagem (DataTable) + 1 Tela de Formulário.
-- Para entidades com filhos: adicionar 1 Tela de Detalhes Master-Detail.
+## 2. ORGANIZAÇÃO DAS INFORMAÇÕES (ETAPA INICIAL)
+Antes de escrever o orçamento, organize as informações:
+- Para CADA item principal: 1 Tela de Listagem (Tabela) + 1 Tela de Formulário (Cadastro).
+- Se o item tiver informações relacionadas: adicionar 1 Tela de Detalhes.
 
 ---
 
-## 3. GERACAO DO ORÇAMENTO (14 SEÇÕES EM ORDEM)
+## 3. GERAÇÃO DA PROPOSTA (14 SEÇÕES EM ORDEM)
 
-### SECAO 1: Apresentação Institucional (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/00_apresentacao.md` e cole o conteúdo INTEGRAL. Copie PALAVRA POR PALAVRA. Este é a primeira seção do orçamento.
-
----
-
-### SECAO 2: Início (CONTEUDO GERADO PELA IA)
-Escreva mínimo 4 parágrafos de storytelling com contexto do cliente e a proposta da WAB.
+### SEÇÃO 1: Apresentação da Empresa (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/00_apresentacao.md` e cole o conteúdo todo aqui. Não altere nada. Esta é a primeira parte da proposta.
 
 ---
 
-### SECAO 3: Escopo e Módulos (CONTEUDO GERADO PELA IA)
-Para cada tela derivada da modelagem, use a seguinte estrutura:
+### SEÇÃO 2: Introdução (CONTEÚDO GERADO PELA IA)
+Escreva pelo menos 4 parágrafos claros contando a história do projeto, as necessidades do cliente e como a WAB irá resolvê-las.
+
+---
+
+### SEÇÃO 3: O que será desenvolvido (CONTEÚDO GERADO PELA IA)
+Para cada tela planejada, use a seguinte estrutura:
 ```
 ### Tela: [Nome da Tela]
 
-**Objetivo Estratégico:**
-[1 parágrafo longo]
+**Objetivo do item:**
+[1 parágrafo claro explicando para que serve a tela]
 
-**Estrutura de Componentes e Layout:**
-- **Cabecalho/Navegação:** [...]
-- **Área Principal:** [Mínimo 4 campos ou colunas citadas explicitamente]
-- **Botões e Ações:** [Lista dos botões com texto exato]
+**Estrutura e Organização:**
+- **Topo e Navegação:** [menus e caminhos da tela]
+- **Conteúdo Principal:** [o que aparece na tela — cite pelo menos 4 pontos]
+- **Botões e Ações:** [lista de botões com os textos exatos]
 
-**Fluxo de Interação e Regras:**
-[1 parágrafo explicando o que acontece]
+**Como funciona a interação:**
+[1 parágrafo explicando como o usuário usa a tela]
 ```
 
 ---
 
-### SECAO 4: Itens Não Inclusos (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/01_itens_nao_inclusos.md` e cole o conteúdo INTEGRAL. Copie PALAVRA POR PALAVRA.
+### SEÇÃO 4: O que não faz parte do projeto (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/01_itens_nao_inclusos.md` e cole o conteúdo todo aqui.
 
 ---
 
-### SECAO 5: Planejamento, Metodologia e Change Request (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/02_planejamento_metodologia.md` e cole o conteúdo INTEGRAL. Em seguida abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/02_regras_change_request.md` e cole o conteúdo INTEGRAL. Copie PALAVRA POR PALAVRA.
+### SEÇÃO 5: Planejamento e Mudanças no Plano (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra os arquivos `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/02_planejamento_metodologia.md` e `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/02_regras_change_request.md` e cole o conteúdo de ambos aqui.
 
 ---
 
-### SECAO 6: Garantia e SLA (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/03_garantia_sla.md` e cole o conteúdo INTEGRAL incluindo a tabela de SLA. Copie PALAVRA POR PALAVRA.
+### SEÇÃO 6: Garantia e Suporte (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/03_garantia_sla.md` e cole o conteúdo todo aqui, incluindo a tabela de prazos.
 
 ---
 
-### SECAO 7: Transição e Treinamento (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/04_transicao_treinamento.md` e cole o conteúdo INTEGRAL. Copie PALAVRA POR PALAVRA.
+### SEÇÃO 7: Treinamento e Entrega (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/04_transicao_treinamento.md` e cole o conteúdo todo aqui.
 
 ---
 
-### SECAO 8: Hospedagem (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/05_hospedagem_inicial.md` e cole o conteúdo INTEGRAL. Este bloco contém a tabela de planos. REMOVA o diagrama Mermaid deste bloco, pois usaremos a versão de alta fidelidade na próxima seção. Copie PALAVRA POR PALAVRA (exceto o Mermaid).
+### SEÇÃO 8: Hospedagem e Servidores (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/05_hospedagem_inicial.md` e cole o conteúdo aqui. REMOVA desenhos técnicos (Mermaid) desta parte.
 
 ---
 
-### SECAO 9: Mapa da Estrutura (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/08_mapa_da_estrutura.md` e cole o conteúdo INTEGRAL. Este bloco contém o diagrama de arquitetura de alta fidelidade (Base64). Copie PALAVRA POR PALAVRA.
+### SEÇÃO 9: Organização da Estrutura (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/08_mapa_da_estrutura.md` e cole o conteúdo todo aqui. Este bloco contém a imagem técnica da estrutura.
 
 ---
 
-### SECAO 10: Plano de Manutenção Contínua (COPIAR VERBATIM)
-> **INSTRUCAO CRITICA:** Abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/07_plano_manutencao.md` e cole o conteúdo INTEGRAL. Copie PALAVRA POR PALAVRA.
+### SEÇÃO 10: Plano de Manutenção (COPIAR EXATAMENTE)
+> **INSTRUÇÃO:** Abra o arquivo `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/07_plano_manutencao.md` e cole o conteúdo todo aqui.
 
 ---
 
-### SECAO 11: Prazo, Deslocamento e Material (CONTEUDO GERADO PELA IA)
+### SEÇÃO 11: Prazos e Materiais (CONTEÚDO GERADO PELA IA)
 - Prazo estimado em semanas.
-- Material que o cliente deve fornecer.
+- O que o cliente precisa nos enviar para começarmos.
 
 ---
 
-### SECAO 12: Cronograma (CONTEUDO GERADO PELA IA)
-Tabela com: Fase | Atividade Principal | Período.
+### SEÇÃO 12: Cronograma (CONTEÚDO GERADO PELA IA)
+Tabela simples com: Etapa, Atividade e Tempo estimado.
 
 ---
 
-### SECAO 13: Validade da Proposta (CONTEUDO GERADO PELA IA)
-Validade de 15 dias corridos.
+### SEÇÃO 13: Validade da Proposta (CONTEÚDO GERADO PELA IA)
+Informe que a proposta vale por 15 dias.
 
 ---
 
-### SECAO 14: Condições Comerciais (COPIAR VERBATIM + Tabela de Investimento)
-> **INSTRUCAO CRITICA:** Antes do conteúdo do bloco, insira:
-> 1. Tabela de Investimento em Desenvolvimento com os módulos e valores.
-> 2. Total geral em destaque.
-> 3. Em seguida, abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/06_condicoes_comerciais.md` e cole o conteúdo INTEGRAL incluindo a tabela de pagamento e os dados de assinatura da WAB. Substitua `[NOME_DO_CLIENTE]` pelo nome real. Copie PALAVRA POR PALAVRA.
+### SEÇÃO 14: Valores e Pagamento (COPIAR EXATAMENTE + Tabela de Preços)
+> **INSTRUÇÃO:** Antes do texto padrão, insira:
+> 1. Tabela com os valores de cada parte do sistema.
+> 2. O valor total do investimento.
+> 3. Em seguida, abra `/Volumes/Dados/work/documentos/skills/sistema/blocos_orcamento/06_condicoes_comerciais.md` e cole o conteúdo incluindo a forma de pagamento e os dados de assinatura da WAB. Troque `[NOME_DO_CLIENTE]` pelo nome real do cliente.
 
 ---
 
-## 4. VERIFICACAO FINAL
+## 4. CONFERÊNCIA FINAL
 Antes de salvar, confirme:
-- [ ] `00_apresentacao.md` é a PRIMEIRA seção do orçamento?
-- [ ] O Stories da SEÇÃO 2 reflete o problema do cliente?
-- [ ] `01_itens_nao_inclusos.md` copiado integralmente?
-- [ ] `02_planejamento_metodologia.md` copiado integralmente?
-- [ ] `02_regras_change_request.md` copiado integralmente?
-- [ ] `03_garantia_sla.md` copiado integralmente com tabela de SLA?
-- [ ] `04_transicao_treinamento.md` copiado integralmente?
-- [ ] `05_hospedagem_inicial.md` copiado integralmente (sem o Mermaid)?
-- [ ] `08_mapa_da_estrutura.md` copiado integralmente com a imagem Base64?
-- [ ] `07_plano_manutencao.md` copiado integralmente?
-- [ ] `06_condicoes_comerciais.md` copiado com assinatura Jonas/WAB?
-- [ ] Nenhum emoji ou ícone no documento?
+- [ ] A Apresentação da Empresa é a primeira seção?
+- [ ] A introdução reflete bem as necessidades do cliente?
+- [ ] Todos os blocos obrigatórios foram copiados sem alterações?
+- [ ] O texto está limpo, sem ícones ou emojis?
+- [ ] O texto está claro e sem termos como "etc" ou pontos suspensivos?
 
-Salve em `/Volumes/Dados/work/documentos/orcamentos_gerados/[CLIENTE]_[PROJETO]/`.
+Salve o arquivo na pasta do cliente.

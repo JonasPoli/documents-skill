@@ -1,19 +1,19 @@
 ---
-name: Gerador de Orçamento Ajustes em Sistema (MANTENÇÃO TÉCNICA)
-description: Orçamento detalhado para correções e evoluções em sistemas complexos.
+name: Gerador de Orçamento Ajustes em Sistema (Melhorias e Ajustes)
+description: Cria orçamentos detalhados para correções e melhorias em sistemas.
 ---
 
 # Skill: Gerador de Orçamento Sistema (Ajustes)
 
-Não trate ajustes como tarefas simples; descreva a complexidade técnica e os impactos.
+Não trate os ajustes como tarefas simples; explique de forma clara a necessidade de cada ponto e o que será feito.
 
-## 1. DESCOBERTA DO BUG/MELHORIA
-- Reprodução do problema ou necessidade de negócio?
-- Impacto no ecossistema (Database, Cache, APIs)?
+## 1. ENTENDIMENTOS INICIAIS
+- Qual o problema que o cliente está enfrentando ou qual a nova necessidade?
+- Quais as partes do sistema que serão afetadas (Banco de dados, Telas, Integrações)?
 
-## 2. ESTRUTURA DO ORÇAMENTO
-- **Análise de Causa Raiz**: "...depuração de logs em ambiente de staging, correção de leaks de memória ou refatoração de código legado para garantir compatibilidade com PHP 8+...".
-- **Garantia de Qualidade (QA)**: "...testes unitários e manuais em múltiplos navegadores e dispositivos antes do deploy em produção...".
+## 2. ESTRUTURA DA PROPOSTA
+- **Análise do Problema**: Explique a causa principal do problema e como vamos resolver (ex: ajuste na organização do banco de dados, correção de erros no código ou melhorias para que o sistema funcione em versões mais novas).
+- **Garantia de Qualidade**: "...o sistema passará por testes completos em computadores e celulares antes de as alterações serem colocadas no ar...".
 
-## 3. SALVAMENTO
+## 3. FINALIZAÇÃO
 Salve como `AJUSTES_SISTEMA_[CLIENTE].md`.

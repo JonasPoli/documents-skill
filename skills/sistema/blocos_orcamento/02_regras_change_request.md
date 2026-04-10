@@ -1,8 +1,8 @@
-## Regras de Alteração de Escopo (Change Request)
+## Mudanças no que foi combinado (Alteração de Escopo)
 
-Qualquer alteração, funcionalidade adicional ou ajuste de requisito solicitado pelo cliente que não esteja explicitamente detalhado nesta Proposta será considerada uma alteração de escopo (Change Request).
+Caso você precise de uma nova função ou uma mudança no que já foi detalhado nesta proposta, seguiremos os passos abaixo:
 
-* **Processo:** Toda solicitação de alteração deverá ser documentada por escrito.  
-* **Orçamento:** A WAB Agência Digital fornecerá um orçamento de horas técnicas, custo e prazo adicionais para a implementação da alteração.  
-* **Aprovação:** O trabalho de alteração de escopo só será iniciado após a aprovação formal (por e-mail ou assinatura) do cliente sobre o novo orçamento.  
-* **Base de Custo:** A hora técnica para Change Requests será aplicada conforme a Tabela de Hora Técnica vigente da WAB (**R$ 220,00 por Homem/Hora WAB**).
+*   **Pedido:** O pedido deve ser feito por escrito (e-mail ou mensagem).
+*   **Orçamento Extra:** A WAB enviará um orçamento com o tempo extra e o valor para realizar a mudança.
+*   **Aprovação:** O trabalho só será iniciado após você aprovar esse novo orçamento.
+*   **Valor da Hora:** Para essas mudanças, usamos o valor padrão de **R$ 220,00 por hora técnica**.

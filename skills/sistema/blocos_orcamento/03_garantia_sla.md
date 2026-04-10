@@ -1,18 +1,20 @@
-## GARANTIA E NÍVEL DE SERVIÇO (SLA)
+## Garantia e Suporte Técnico
 
-### Garantia de Software (Bugfix)
+Para garantir que o sistema funcione bem, oferecemos um período de garantia e uma regra clara para atendimentos.
 
-A WAB Agência Digital oferece uma garantia de 180 dias (seis meses) a partir da data do Go-Live (Publicação em Produção) para a correção de quaisquer erros de programação (bugs) ou falhas que desviem do comportamento e requisitos descritos nesta proposta até o limite de 30 horas.
+### Garantia do Sistema (Correção de Erros)
 
-* As correções de bugs dentro deste período serão realizadas sem custo adicional para o cliente.  
-* A garantia não cobre problemas causados por modificações feitas no código-fonte pelo cliente ou por terceiros não autorizados pela WAB, nem problemas decorrentes da infraestrutura ou de ferramentas de terceiros.
+A WAB oferece garantia de **180 dias (seis meses)** a partir da data em que o sistema for colocado no ar para uso definitivo. Essa garantia cobre a correção de qualquer erro que faça o sistema se comportar de forma diferente do que foi combinado nesta proposta, até o limite de 30 horas de trabalho técnico.
 
-### Acordo de Nível de Serviço (SLA) para Suporte
+*   As correções de erros dentro deste prazo não terão custo extra.
+*   A garantia não cobre problemas causados por mudanças feitas no código por pessoas de fora da WAB, problemas nos computadores do cliente ou falhas em serviços de outras empresas.
 
-Após a utilização do pacote inicial de 30 horas de suporte técnico, o cliente poderá contratar pacotes de horas adicionais. O SLA para os serviços de suporte (para problemas ou dúvidas, não cobertos pela garantia de bugfix) será:
+### Prazos de Atendimento (Suporte)
 
-| Prioridade | Definição | Tempo Máximo de Resposta (Início do Atendimento) |
+Após o uso das 30 horas iniciais, você poderá contratar novos pacotes de horas. Para as solicitações de suporte, seguimos os prazos abaixo:
+
+| Urgência | O que é | Prazo para Iniciarmos |
 | :---- | :---- | :---- |
-| **Crítica** | Falha que impede a operação do sistema (ex: Login não funciona, Pedido indisponível). | **2 Horas Úteis** |
-| **Alta** | Falha que compromete uma função essencial, mas permite a operação alternativa (ex: Relatório com erro de cálculo, Checkout lento). | **4 Horas Úteis** |
-| **Média/Baixa** | Dúvidas de uso, ajustes de layout ou falhas não operacionais. | **8 Horas Úteis** |
+| **Crítica** | Problema que trava o sistema (ex: Login não funciona). | **Até 2 Horas Úteis** |
+| **Alta** | Falha em uma função importante (ex: Erro em um relatório). | **Até 4 Horas Úteis** |
+| **Média/Baixa** | Dúvidas de uso ou pequenos ajustes visuais. | **Até 8 Horas Úteis** |

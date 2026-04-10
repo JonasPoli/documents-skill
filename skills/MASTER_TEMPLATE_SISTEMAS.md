@@ -1,82 +1,75 @@
 # MASTER TEMPLATE: SISTEMAS WAB
 
-Este é o molde DE OBRIGATÓRIA ADESÃO para orçamentos de **SISTEMAS**.
-Projetos de sistema exigem densidade técnica absoluta. Modelos de IA devem seguir regras matemáticas estritas aqui para não resumirem o escopo.
+Este é o guia de **ADESÃO OBRIGATÓRIA** para orçamentos de **SISTEMAS**.
+Projetos de sistema exigem um detalhamento completo de cada função. Você deve seguir as regras abaixo para garantir que o escopo esteja totalmente descrito, sem resumos.
 
 > [!IMPORTANT]
-> **REGRA ANTI-RESUMO E VOLUME:** Todo o conteúdo gerado deve estar em **Português do Brasil (PT-BR)**. É PROIBIDO O USO DE "etc", "...", ou jargões que encurtem a explicação. O orçamento gerado final DEVE SER EXAUSTIVO (objetivo: gerar um documento longo o suficiente para justificar o valor comercial).
+> **REGRA DE DETALHAMENTO:** Todo o conteúdo gerado deve estar em **Português do Brasil (PT-BR)**. É PROIBIDO o uso de "etc", "..." ou qualquer termo que encurte a explicação. A proposta final DEVE SER COMPLETA e detalhada (o objetivo é ter um documento robusto que demonstre o valor do trabalho).
 
 # DIRETRIZES GERAIS
-Leia o arquivo `diretrizes.md`. Siga o modelo `.md` como uma máscara rígida. Não alucine formatos fora deste padrão.
+> [!IMPORTANT]
+> **ESTILO DE ESCRITA (OBRIGATÓRIO):** Antes de gerar qualquer texto, você DEVE ler o arquivo `skills/forma-de-escrever.md`. Este documento é atualizado com frequência e contém as regras mais recentes de tom de voz, vocabulário e estilo que devem ser seguidas fielmente.
 
+Leia o arquivo `diretrizes.md` e siga o modelo como uma base fixa para o texto.
 
-## A REGRA MATEMÁTICA DAS ENTIDADES (Passo Interno, Pré-Orçamento)
-Você deve SEMPRE gerar um arquivo markdown interno (`ENTITIES_[CLIENTE].md`) na pasta do orçamento mapeando:
-- **Tabelas Principais / Entidades do Domínio**
-- **Relacionamentos (1:N, N:N)**
-- **Tipos de Usuários (Roles/Acessos)**
-- **Definição OBRIGATÓRIA de CRUDs**:
-  > **REGRA MATEMÁTICA ESTREITA:** Para **CADA** entidade (tabela) listada acima, você DEVE listar, obrigatoriamente, NO MÍNIMO DUAS TELAS: 1 Tela de Listagem (DataTable) e 1 Tela de Formulário (Cadastro/Edição). Exceção apenas se for tabela de relação oculta.
+## Organização de Dados e Telas (Etapa Inicial)
+Antes de escrever o orçamento, você deve organizar as informações do sistema criando um arquivo interno (`ENTITIES_[CLIENTE].md`) na pasta do projeto, mapeando:
+- **Áreas Principais do Sistema** (O que o sistema gerencia)
+- **Como as informações se conectam**
+- **Tipos de Usuários e Níveis de Acesso**
+- **Definição OBRIGATÓRIA de Telas**:
+  > **REGRA DE TELAS:** Para **CADA** item principal do sistema, você deve listar, obrigatoriamente, NO MÍNIMO DUAS TELAS: 1 Tela de Listagem (Tabela de dados) e 1 Tela de Formulário (Para cadastrar ou editar informações).
 
-*Somente APÓS gerar este arquivo interno, avance para a estrutura do documento.*
+*Somente APÓS organizar esses pontos, comece a escrever o documento do cliente.*
 
 ---
 
-## ESTRUTURA DO ORÇAMENTO (O Documento do Cliente)
-O arquivo final (.md) deve OBRIGATORIAMENTE conter as seguintes 13 seções EXATAS, nesta mesma ordem (sem remover NENHUMA):
+## ESTRUTURA DA PROPOSTA (O Documento para o Cliente)
+O arquivo final (.md) deve conter as seguintes seções, exatamente nesta ordem:
 
 ### 1. Início
-- **Parágrafos Iniciais**: Carta de apresentação formal (mínimo 2 parágrafos).
-- **Descrição do Orçamento** e **Cenário Geral**: Explicar a dor resolvida exaustivamente.
-- **Resumo do Sistema**: Um "Elevator Pitch" técnico.
+- **Palavras Iniciais**: Carta de apresentação de forma clara (mínimo 2 parágrafos).
+- **Resumo do Orçamento** e **Cenário Geral**: Explique as necessidades que serão atendidas de forma detalhada.
+- **Sobre o Sistema**: Uma apresentação rápida e objetiva sobre o que o sistema fará na prática.
 
-### 2. Escopo e Módulos
-**ESTA É A SEÇÃO MAIS IMPORTANTE. APLIQUE O "TEMPLATE ESTRITO DE WIREFRAME TEXTUAL" (Do MASTER_TEMPLATE.md) PARA CADA TELA.**
-- **Acesso ao Sistema e Proteção**: Detalhe os métodos (2FA, RBAC, etc).
-- **Módulos / Tipos de Usuário**: Para cada módulo, descreva exaustivamente as permissões.
-- **Telas (Baseadas nas Entidades)**: A lista de telas deve ser obrigatoriamente a mesma do `ENTITIES_[CLIENTE].md`.
-  - **A REGRA DO DATATABLE**: Todas as listagens devem ter uma coluna "Ação" com botões contextuais (Editar, Detalhes).
-  - **A REGRA DO MESTRE-DETALHE**: A tela de "Detalhes" de um registro Mestre (ex: Cliente) DEVE listar seus filhos (ex: Projetos).
-  - **OBRIGATÓRIO:** Use o Template Estrito de Wireframe Textual com tópicos Exatos (Objetivo Estratégico, Estrutura de Componentes, Fluxo de Interação). Nenhuma tela pode ter menos de referenciar 4 campos de dados.
-- **Relatórios**: Liste e descreva pelo menos 3 formulários de relatórios PDF/Excel.
+### 2. O que será desenvolvido (Módulos e Telas)
+**ESTA É A SEÇÃO MAIS IMPORTANTE. USE O "MODELO DE DESCRIÇÃO DE TELA" (Do MASTER_TEMPLATE.md) PARA CADA ITEM.**
+- **Acesso ao Sistema e Segurança**: Detalhe como os usuários entrarão no sistema (senha, níveis de permissão, etc).
+- **Tipos de Usuários**: Para cada tipo de usuário, descreva o que ele poderá ver ou fazer.
+- **Telas do Sistema**: A lista de telas deve seguir o que foi planejado na etapa inicial.
+  - **Regras das Tabelas**: Todas as listagens de dados devem ter um campo de "Ação" com botões para Editar ou Ver Detalhes.
+  - **Visualização de Detalhes**: Ao ver os detalhes de um item principal (ex: um Cliente), o sistema deve mostrar as informações relacionadas a ele (ex: os Pedidos desse cliente).
+  - **MODELO OBRIGATÓRIO:** Use o Modelo de Descrição de Tela com os tópicos: Objetivo, Estrutura e Como funciona a interação.
 
-### 3. Itens não Inclusos
-(Transcrever regras sobre conteúdo, integrações externas, revisões ortográficas).
+### 3. O que não faz parte do projeto
+(Explique claramente as regras sobre conteúdo, integrações com outros sites e revisões).
 
-### 4. Suporte Técnico
-(Explicar canais: e-mail, telefone).
+### 4. Suporte e Atendimento
+(Explique como o cliente pode entrar em contato: e-mail ou telefone).
 
-### 5. Hora Técnica
-(Valor padrão R$ 220,00 para fora do escopo).
+### 5. Valores Adicionais
+(Valor padrão de R$ 220,00 para pedidos extras que não estavam no plano original).
 
-### 6. Logística do Sistema
-(Repositórios, versionamento, deployment).
+### 6. Como o sistema será entregue
+(Informações sobre onde o código ficará guardado e como ele será colocado no ar).
 
-### 7. Hospedagem
-**Estrutura Física**, **Hospedagem Inicial & Da Aplicação**, **Serviços Inclusos** (Backup, Firewall, SSL).
-**Mapa da estrutura**  
-Abaixo segue um mapa de como planejamos montar a estrutura física que conterá o sistema:
+### 7. Hospedagem e Segurança
+**Estrutura do Servidor**, **Primeiros passos da Hospedagem** e **Serviços Inclusos** (Cópia de segurança/Backup, Proteção e Certificado de Segurança SSL).
 
-# 
+### 8. Plano de Manutenção (Cuidado contínuo)
+**O que está incluso**, **Prazo de atendimento** e **Horas extras**.
 
-# **![][image1]**
-
-[image1]: <data:image/png;base64,INSERA_O_CÓDIGO_AQUI>
-
-### 8. Evolução Contínua (Plano de Manutenção e Suporte)
-**Serviços Inclusos**, **Condições de Atendimento & SLA**, **Horas Excedentes**.
-
-### 9. Outros Dados
+### 9. Prazo e Outros Detalhes
 **Deslocamento** e **Prazo de Entrega**.
 
-### 10. Material Para Desenvolvimento
-Documentos necessários da contratante.
+### 10. Material Necessário
+Quais documentos ou acessos o cliente precisa enviar para começarmos.
 
-### 11. Cronograma
-Tabela dividida em: Backend/Database, Frontend/Telas, Testes/Homologação, Go-live.
+### 11. Cronograma de Trabalho
+Tabela dividida por etapas: Estrutura do Banco de Dados, Criação das Telas, Testes e Colocação no Ar.
 
 ### 12. Validade da Proposta
 (15 dias).
 
-### 13. Condições Comerciais
-Tabela de desenvolvimento, tabela de hospedagem e bloco de aceite.
+### 13. Tabela de Valores e Aceite
+Valores do desenvolvimento, valores da hospedagem e o espaço para a assinatura.

@@ -1,17 +1,19 @@
-## TRANSIÇÃO E TREINAMENTO
+## Transição e Treinamento
 
-### Plano de Migração de Dados
+Para que a mudança para o novo sistema seja tranquila, cuidamos da migração dos dados e do treinamento da sua equipe.
 
-A transição para o novo sistema exige a migração de dados históricos do sistema anterior.
+### Migração de Dados (Informações Antigas)
 
-* **Responsabilidade:** O cliente é responsável por extrair os dados legados do sistema anterior em formato de planilha (CSV ou Excel) com colunas devidamente mapeadas e definidas em conjunto com a WAB.  
-* **Importação:** A WAB desenvolverá os scripts necessários para a importação e validação desses dados no novo sistema.  
-* **Dados a Migrar:** Serão migrados dados cadastrais e dados transacionais críticos.
+A migração permite que o novo sistema já comece com as informações históricas que você já possui.
 
-### Treinamento de Usuários
+*   **Responsabilidade:** O cliente deve nos enviar os dados antigos em arquivos de planilha (Excel ou CSV) com as colunas organizadas conforme combinarmos com a WAB.
+*   **Importação:** A WAB criará as ferramentas necessárias para ler essas planilhas e colocar os dados no novo sistema.
+*   **Dados Migrados:** Focaremos na migração de cadastros (clientes, produtos, etc.) e dados essenciais para o funcionamento do negócio.
 
-O treinamento visa garantir que todas as equipes do cliente utilizem o novo sistema de forma eficiente.
+### Treinamento de Uso
 
-* **Público-Alvo:** O treinamento será segmentado por funções (Atendimento, Logística/Produção e Administração/Gestão).  
-* **Duração e Formato:** A WAB fornecerá 20 horas de treinamento, distribuídas conforme o cronograma de implantação, em formato online ou presencial (a ser acordado), com foco na operação do novo sistema e nas novas funcionalidades de workflow.  
-* **Conteúdo:** O treinamento abrangerá a criação e rotina operacional completa.
+Queremos garantir que todos saibam usar o sistema da melhor forma possível.
+
+*   **Público-Alvo:** O treinamento será dividido por grupos, conforme a função de cada um no sistema (ex: Vendedores, Administrativo, Gerência).
+*   **Duração e Formato:** Oferecemos **20 horas de treinamento**, que podem ser feitas online ou presencialmente (conforme combinado). O foco será ensinar as tarefas reais do dia a dia.
+*   **Conteúdo:** Ensinaremos desde a criação de novos registros até a rotina completa de trabalho no sistema.

@@ -1,19 +1,19 @@
 ---
-name: Gerador de Orçamento WordPress Ajustes (ESPECÍFICO)
-description: Orçamento minucioso para ajustes pontuais em sites WordPress.
+name: Gerador de Orçamento WordPress Ajustes (Melhorias e Ajustes)
+description: Cria orçamentos detalhados para ajustes e pequenas melhorias em sites WordPress.
 ---
 
 # Skill: Gerador de Orçamento Site WordPress - Ajustes
 
-Este documento deve detalhar cada correção como uma melhoria na infraestrutura de marketing do cliente.
+Este documento deve detalhar cada correção como uma melhoria importante para o marketing e funcionamento do site do cliente.
 
-## 1. DESCOBERTA
-- Checklist de plugins desatualizados.
-- Análise de segurança básica prévia.
+## 1. ENTENDIMENTOS INICIAIS
+- Conferência de plugins que precisam de atualização.
+- Breve análise de segurança antes de começar.
 
-## 2. ESTRUTURA
-- **Lista de Melhorias**: Cada item deve ter: Problema Encontrado | Solução Proposta | Valor Agregado (ex: Melhoria de LCP).
-- **Garantia Técnica**: "...os ajustes são seguidos de testes de regressão para garantir que funcionalidades existentes não sejam afetadas...".
+## 2. ESTRUTURA DA PROPOSTA
+- **Lista de Melhorias**: Cada item deve ter: O que será corrigido | Como vamos resolver | O benefício para o site (ex: Mais rapidez no carregamento).
+- **Garantia de Funcionamento**: "...após os ajustes, fazemos testes completos para garantir que tudo continue funcionando perfeitamente em todas as partes do site...".
 
-## 3. SALVAMENTO
+## 3. FINALIZAÇÃO
 Salve como `AJUSTES_WP_[CLIENTE].md`.

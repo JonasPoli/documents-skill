@@ -1,15 +1,14 @@
-## ITENS NÃO INCLUSOS
+## Itens que não fazem parte deste orçamento
 
-Apenas para documentar, segue uma lista de itens não contemplados por esta proposta e que, caso sejam solicitados, serão cobrados à parte, de acordo com sua complexidade e disponibilidade da equipe.
+Para que não haja dúvidas, listamos abaixo alguns itens que **não estão inclusos** nesta proposta:
 
-**Suporte a ferramentas de terceiros:**  
-Não está incluso neste orçamento o suporte à utilização de ferramentas como Adobe Photoshop, CorelDraw, Internet Explorer, Gateways de pagamento, Correios, etc.
-
-**Conteúdo:**  
-O conteúdo do sistema, incluindo textos, imagens e outros recursos, serão fornecidos pelo cliente antes do início do desenvolvimento.
-
-**Correção de material:**  
-A WAB não se responsabiliza por eventuais erros de ortografia ou de interpretação nos textos inseridos pelo cliente utilizando a área administrativa do sistema.
+*   **Identidade Visual:** Criação de logotipos, artes para redes sociais ou materiais impressos.
+*   **Conteúdos e Imagens:** Criação de textos, fotos profissionais ou compra de imagens em sites de banco de dados. O cliente deve nos enviar todo o material que será usado no sistema.
+*   **Taxas de Terceiros:** Custos extras com registro de domínio, planos de hospedagem, licenças de softwares de outros fornecedores ou taxas de serviços como gateways de pagamento e envio de e-mail.
+*   **Limpeza de Dados Antigos:** Limpeza ou correção de dados vindos de sistemas antigos que estejam desorganizados.
+*   **Equipamentos:** Compra de computadores, tablets ou impressoras.
+*   **Presença no Local:** Trabalhos realizados fora da sede da WAB (salvo se combinado por escrito).
+*   **Dúvidas de Uso de Outros Sistemas:** Suporte para sistemas que não foram criados pela WAB.
 
 **Tecnologia dos navegadores:**  
 Embora o sistema funcione perfeitamente em quase todos os navegadores existentes, a WAB garante que o sistema a ser desenvolvido funcionará corretamente nos navegadores Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari e Opera.
