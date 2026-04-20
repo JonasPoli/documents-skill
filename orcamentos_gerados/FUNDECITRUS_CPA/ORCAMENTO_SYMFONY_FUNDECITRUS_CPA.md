@@ -1,164 +1,251 @@
-# **Proposta Comercial: Desenvolvimento de Site Symfony – CPA Citros**
+# **Proposta Comercial: Desenvolvimento de Site – CPA Citros**
 
 **À Diretoria e Gestão do CPA Citros (Fundecitrus / Esalq-USP / Fapesp)**
 
-Primeiramente, a equipe da WAB Agência Digital agradece pela oportunidade de elaborar esta proposta de desenvolvimento. Com mais de 20 anos de experiência no mercado de inovação tecnológica, comunicação web e construção de sistemas robustos sob medida, nossa agência está preparada para entregar uma solução digital de altíssimo nível, alinhada à magnitude do esforço científico e institucional conduzido pelo CPA Citros.
+A equipe da WAB Agência Digital agradece a oportunidade e apresenta esta proposta. Com mais de 20 anos de experiência em comunicação web e desenvolvimento de sistemas, estamos prontos para entregar uma solução digital à altura do trabalho científico conduzido pelo CPA Citros.
 
-Estamos à disposição para sanar quaisquer dúvidas e aprofundar os detalhes técnicos ou de negócios pelos telefones (16) 98179‑0888 / (16) 3332‑7798, ou e-mail wab@wab.com.br. Este documento, datado de 17 de Abril de 2026, descreve o escopo detalhado, funcionalidades, requisitos de infraestrutura e termos comerciais para a materialização do site oficial e área restrita do Centro de Pesquisa Aplicada em Inovação e Sustentabilidade da Citricultura.
-
----
-
-## **1. Cenário Geral e Visão do Projeto**
-
-O **CPA Citros** atua como uma rede global de inteligência científica, unindo 17 instituições de pesquisa nacionais e internacionais, com o objetivo de desenvolver soluções tecnológicas e inovadoras aplicadas ao campo para garantir a sustentabilidade da cadeia produtiva citrícola — com especial foco no combate ao Huanglongbing (HLB/greening), a maior ameaça à citricultura mundial. 
-
-Neste cenário de extrema relevância global, o CPA Citros requer uma plataforma web (site) que transcenda o formato de um mero portfólio digital. O site deverá atuar como um **portal robusto de comunicação científica e repositório de pesquisas**, capaz de dar máxima visibilidade às atividades desenvolvidas, às linhas de pesquisa e projetos conduzidos, ao corpo de pesquisadores envolvidos e aos resultados (publicações e tecnologias) gerados para a sociedade. Além disso, o ambiente precisa prever uma **Área Restrita** eficiente onde a comunidade de investigadores do centro possa interagir ativamente.
-
-### **1.1. Objetivos Tecnológicos do Projeto**
-
-O objetivo primário deste escopo é o desenvolvimento e implantação do novo site oficial do CPA Citros, construído do zero sob a arquitetura e linguagem do framework **Symfony**. O sistema contará com uma interface rica, intuitiva e amigável, um painel administrativo poderoso (CMS) completo para gestão de todos os conteúdos dinâmicos por parte da equipe de comunicação, além do suporte bilíngue (Português/Inglês) para garantir acesso irrestrito à comunidade acadêmica internacional.
+Estamos à disposição pelos telefones **(16) 98179‑0888 / (16) 3332‑7798** ou pelo e-mail **wab@wab.com.br**. Este documento, datado de 17 de abril de 2026, descreve o que está previsto para o desenvolvimento do site oficial e da área restrita do Centro de Pesquisa Aplicada em Inovação e Sustentabilidade da Citricultura.
 
 ---
 
-## **2. Requisitos Não Funcionais**
+## **Descrição e Objetivo do Projeto**
 
-### **2.1. Arquitetura e Stack (Symfony)**
-Todo o motor de processamento do site (Back-End) e a área restrita serão construídos em **Symfony** (framework PHP de alta performance, excelência e escalabilidade). O banco de dados relacional (MySQL/MariaDB ou equivalente) será dimensionado para garantir integridade, relacionamentos complexos (como Pesquisadores > Projetos > Publicações) e segurança de senhas. 
+O **CPA Citros** é uma rede de inteligência científica que reúne 17 instituições de pesquisa nacionais e internacionais, com foco em desenvolver soluções para a citricultura — em especial no combate ao Huanglongbing (HLB/greening), a maior ameaça à cultura citrícola no mundo.
 
-### **2.2. Idiomas e Internacionalização**
-O framework será configurado para gerenciar traduções de interface e suporte para rotas (URLs) dinâmicas no padrão Bilíngue: **Português (pt-BR)** como idioma principal e **Inglês (en-US)**. Os administradores poderão alimentar todo o conteúdo nas duas linguagens simultaneamente por meio do painel de controle.
-
-### **2.3. Design Responsivo e Interface Pública (Front-End)**
-O front-end (visualização externa para o público) obedecerá estritamente ao layout desenhado em alta fidelidade ("Premium Aesthetic"). O estilo adotado engloba um **Design System moderno**, com aplicação de _Glassmorphism_ (efeitos translúcidos e de vidro), fundos padronizados com gradientes radiais suaves e uma tipografia limpa (Inter). Destacam-se as seguintes entregas baseadas no layout oficial:
-
-*   **Header e Navegação Integrada:** Uma "Topbar Restrita" superior (barra escura) dedicada exclusivamente ao login seguro dos pesquisadores e alternância instantânea de idiomas (PT/EN). Logo abaixo, um menu principal de acesso rápido (Sticky Header) com efeito translúcido para navegação entre as grandes áreas do CPA.
-*   **Home Page Dinâmica:** "Hero Section" moderna com chamadas textuais sobre inovação para retenção imediata. A página contará com blocos no formato "Bento Grid" interativo (descrevendo o HLB e as parcerias) e um "Magazine Feed" atualizando o radar de notícias e comunicados em tempo real, com efeitos de sombra e agrupamento.
-*   **Páginas Institucionais (Sobre):** Layout de apresentação sofisticado (Split Layout) com fotos de alta qualidade e divisão em colunas para missões metodológicas. A seção "Parceiros" incluirá um robusto "Bento Cloud Grid", exibindo logomarcas e listagens oficiais das organizações parceiras no Brasil e no Mundo, e a governança dedicada pela FEALQ.
-*   **Vitrine Científica (Pesquisa):** Construção estética baseada em três grandes verticais (Manejo, Interação Genômica, Mitigação). Exibição interativa da equipe através de um "Avatar Grid" inteligente, que aplica filtros progressivamente ao hover nas fotos dos pesquisadores, conectando-os ao Lattes. Será inclusa a renderização de listagens ou tabelas dinâmicas para elencar "Projetos em Execução", permitindo buscas fáceis pela comunidade.
-*   **Footer Institucional Monolítico:** Um vasto rodapé contemplando acessos rápidos da Central de Atendimento, e os selos chancelados de transparência com fundos escuros e matrizes monocromáticas.
-
-Toda essa casca visual manterá **Responsividade plena**, adaptando toda a elegância destas proporções visualmente às extremas restrições dos mobiles (celulares), sem abrir mão da complexidade artística e tecnológica proposta.
-
-### **2.4. Acesso ao Sistema e Segurança**
-A segurança aos acessos administrativos ou da área restrita (pesquisadores) envolverá camadas de autenticação nativas do Symfony Security, criptografia de dados críticos (Bcrypt/Argon2i), restrição por papéis (Roles de Administrador Geral e de Pesquisador). O ambiente incluirá mecanismos de rastreamento de acessos anômalos e proteção contra ataques comuns da web (XSS, CSRF, SQL Injection).
+O objetivo principal é criar e publicar o novo site oficial do CPA Citros, desenvolvido do zero usando o framework **Symfony**. O sistema terá uma interface moderna e fácil de usar, um painel administrativo completo para a equipe de comunicação gerenciar todos os conteúdos, e suporte a dois idiomas (Português e Inglês) para atender à comunidade acadêmica internacional.
 
 ---
 
-## **3. Requisitos Funcionais e Módulos do Sistema**
+## **Requisitos Funcionais**
 
-O sistema será desmembrado modularmente em sua estrutura interna, de forma que cada área do projeto possa ser nutrida autonomamente. Conforme a Estrutura CPA proposta, detalhamos a seguir os módulos que comporão o painel de gerenciamento (CMS), gerenciando a exibição final ao usuário:
+Foram definidos os módulos e telas que compõem o sistema, detalhando as funcionalidades previstas para cada área do site e para o painel de gerenciamento.
 
-### **3.1. Painel de Controle (Dashboard Administrativo)**
-Um painel exclusivo, acessado pelos colaboradores da equipe de comunicação, consolidará acessos rápidos aos principais cruds (cadastros). O painel oferecerá painéis numéricos de informações como visualizações, total de notícias cadastradas, projetos em aberto e logins de pesquisadores.
+### Design e Interface Pública
 
-### **3.2. Módulo: Configurações Globais (Home e Rotativos)**
-*   **Gestão de Banners:** Cadastro ilimitado de banners principais (Hero/Banners institucionais "full-width"), com envio de imagens em alta resolução, títulos, subtítulos ("Esalq - USP, Fundecitrus unindo esforços..."), botão de ação e ordenação configurável.
-*   **Gestão Textual da Home:** Acesso rápido à alteração dos resumos textuais como "Sobre nós" e "Mais sobre o HLB", exibidos diretamente na primeira página.
-*   **Rodapé Parametrizável:** Seção no CMS para adicionar e organizar os logotipos dos parceiros e instituições apoiadoras, com o devido link apontando para suas páginas oficiais.
+#### ***Cabeçalho e Navegação***
 
-### **3.3. Módulo Institucional: Sobre e Inovação**
-*   **Quem Somos e Estrutura:** Edição dos grandes blocos de texto (editor rico formatação HTML - bold, italico, listas e links).
-*   **Organograma / Comitês:** Upload de documentos visuais contendo organogramas, ou montagem via sistema de "Membros" vinculados as categorias (Conselho, Científico, Gestão).
-*   **Gestão de Parceiros:** CRUD para inserção de Instituições Governamentais, Fundações, SPs (São Paulo), Instituições Estrangeiras (por Ordem Alfabética). Cada instituição terá Logo, Título, Estado/País, link externo. Possibilidade de implementação de **Mapa Interativo** on-hover com aumento das logomarcas.
-*   **Página Inovação:** Gestor padrão de conteúdo estruturado, programado de forma que o Administrador possa ativar/desativar toda a exibição da página visando seu status de inserção no futuro.
+- Barra superior com acesso ao login dos pesquisadores e troca de idioma (PT/EN).
+- Menu fixo com efeito translúcido (glassmorphism), ativo em todas as páginas.
+- Logo com comportamento responsivo: maior e centralizado no mobile ao carregar a página, reduzindo de tamanho ao rolar mantendo o alinhamento centralizado; no desktop, alinhado à esquerda com a navegação principal à direita.
 
-### **3.4. Módulo Científico: Pesquisa**
-O núcleo da base de conhecimento da plataforma. Será construído um modelo relacional que suporte a apresentação rica de dados acadêmicos:
-*   **Textos Fixos e Linhas de Pesquisa:** Áreas editáveis para a contextualização do combate ao HLB e descrição das 3 linhas principais ("O manejo do greening...", "O entendimento das interações...", "Aumento da produção e mitigação...").
-*   **Projetos de Pesquisa:** Cadastro englobando os campos: Módulo, Nome/Título do Projeto, Resumo do Objetivo e a seleção/associação do Pesquisador Responsável. 
-*   **Pesquisadores:** Cadastro do capital intelectual (Diretório Lattes em destaque). Perfil com Foto, Divisão de Área de Atuação, Nome Completo, Resumo, URL para currículo e possibilidade de vincular Projetos a esse autor.
-*   **Publicações Técnicas e Científicas:** Uma estrutura robusta para cadastro de trabalhos. Campo para Título da publicação, Arquivo PDF/Link Externo DOI, Autores, Ano de Publicação, Tipo (Artigo, Abstract, Dissertação). Isso possibilitará listagem completa no site ou filtragem associada ao pesquisador.
+#### ***Página Inicial (Home)***
 
-### **3.5. Módulo Institucional: Comunicação (News/Media)**
-*   **Canal de Notícias:** Gestão e criação de reportagens com interface de fácil utilização. Campos: Imagem Destaque obrigatória, Título da Matéria, Resumo, Texto da Matéria, Autor, e Data/Hora de postagem. Suporte a vídeos incorporados. Emissão de blocos formatados para exibição da rotina do laboratório, idas a campo e descobertas.
-*   **Na Mídia / Clipping:** Um formato ligeiramente modificado para armazenar matérias publicadas por outros veículos de comunicação referentes ao CPA Citros (Imagem, Título Específico, Resumo e Link direto ao jornal/revista).
-*   **Vídeos e Podcasts:** Listagem com embed de plataformas oficiais de mídia do centro da USP/Fundecitrus (Ex. iFrames de Spotify e Youtube).
+**Banner principal:** Seção de destaque com impacto visual imediato, apresentando o CPA Citros de forma clara e atrativa.
 
-### **3.6. Módulo Institucional: Eventos e Oportunidades**
-*   **Agenda de Eventos (Futuros):** Ferramenta de disparo informativo sobre datas reservadas e grandes chamadas. Inclusão de banners, período (Ida/Volta), formato (híbrido/online/fisico) e textos gerais do convite.
-*   **Eventos Realizados (Repositório Cursos/Treinamentos):** O CMS permitirá migrar eventos que já ocorreram para a aba "Realizados", associando à respectiva edição seus recortes de mídia, apresentações de Slides, PDFs, Fotos e Gravações, criando um acervo da história da instituição e transferindo o conhecimento perpetuamente aos assinantes e visualizadores abertos do site.
-*   **Oportunidades (Vagas/Bolsas/Pós-Doc):** Árvore dedicada aos talentos. Cadastro simplificado de vagas contendo Perfil Almejado, Titulação e Prazo. Status selecionável entre "Aberto" para recepção de inscrições/currículos e "Encerrado".
+- Título e subtítulo com a proposta do centro.
+- Chamadas de ação diretas: "Conheça as Pesquisas" e "Acesse a Área Restrita".
 
-### **3.7. Módulo Restrito: Área do Pesquisador (Login e Repositório Interno)**
-A exigência de compartilhamento científico protegido será suprida com um acesso fechado a participantes:
-*   **Login Customizável (Área Restrita):** Um menu fixo no topo da aplicação proverá acesso à interface de login segura (Login e Senha). O portal validará automaticamente usuários com papel/permissão de PESQUISADOR versus ADMINS da equipe digital.
-*   **Gestor de Arquivos Confidenciais/Base de Dados:** Os administradores criarão diretórios ou publicações fechadas por pastas para repositório do "estado da arte" nas investigações em curso, relatórios gerenciais das pesquisas ou dados tabulares primários onde os pesquiadores cadastrados logarão e conseguirão descarregar essas mídias para acompanhamento de longo prazo interno na equipe global.
-*   *(Nota: O sistema de envio direto pelo pesquisador poderá ser discutido em aprofundamento, optando-se inicialmente por um repositório distribuído via gerenciador master ou um permissionamento individual).*
+**Destaques do CPA:** Blocos interativos no estilo Bento Grid apresentando os principais temas do centro.
 
-### **3.8. Módulo de Contatos**
-*   **Formulário Fale Conosco:** Geração de tela para envio direto de mensagens do usuário visitante pelo site para os destinos pré-moldados (como contato@cpacitros.com.br).
-*   Proteção contra lixo eletrônico (ReCAPTCHA/Hcaptcha invisible) aplicada. Integração assíncrona que não recarrega todo o navegador, garantindo agilidade.
+- Bloco dedicado ao HLB: o que é, por que é urgente e como o CPA atua.
+- Bloco de parcerias institucionais nacionais e internacionais.
+- Indicadores dinâmicos gerenciados pelo admin (número de pesquisadores ativos, projetos em andamento, publicações, etc.).
 
+**Feed de Notícias:** Listagem das últimas publicações do canal de comunicação, atualizada automaticamente.
 
----
+**Rodapé:** Presente em todas as páginas do site.
 
-## **4. Infraestrutura e Hospedagem Cloud (WAB)**
+- Links rápidos para as áreas principais.
+- Contato institucional e selos das organizações apoiadoras.
+- Logotipos dos parceiros com links externos.
 
-O ambiente completo em Symfony exige uma configuração server profissional otimizada. Recomendamos a adoção do pacote **Cloud Intermediário / Avançado (VPS Dedicado WAB Host)** para sustentar as exigentes capacidades de banco de dados e tráfego decorrente da demanda global da comunidade acadêmica ao site da USP/Fundecitrus.
+#### ***Página "Sobre o CPA Citros"***
 
-**Estão Inclusos neste modelo:**
-*   Disponibilização de Servidor Virtual Privado Linux de alta disponibilidade (99.8% Uptime).
-*   Certificado de Segurança SSL Let's Encrypt padrão (HTTPS obrigatório).
-*   Sistema de rotinas de Backups (Banco de Dados Diários e FileSystem Semanal/Diário dependendo da parametrização).
-*   Sistemas de mitigação de DDOS em camadas externas.
-*   Utilização restrita por SFTP e Automações de Deploy via pipeline contínua. 
-*(Os orçamentos exatos de infraestrutura seguirão em aditivo a pedido específico após lançamento e volumetria provável de dados do repositório ser analisada)*.
+- **Quem Somos e Proposta:** Textos que apresentam a missão, os objetivos e a estrutura do centro de forma clara e estratégica.
+- **Rede de Parceiros:** Grade visual com as logomarcas das 17 instituições parceiras, com destaque ao passar o mouse e link para cada organização. Inclui a possibilidade de mapa interativo.
+- **Governança e Comitês:** Apresentação da estrutura organizacional com membros por categoria (Conselho, Científico, Gestão), com foto, nome e função.
+- **FEALQ:** Espaço dedicado à apresentação da instituição interveniente financeira oficial.
 
----
+#### ***Página "Pesquisa"***
 
-## **5. Manutenção e Suporte Técnico (SLA WAB)**
+**Linhas de Pesquisa:** Apresentação das três grandes frentes de atuação do CPA.
 
-Prezamos pela estabilidade a longo prazo dos ecossistemas digitais que desenvolvemos. A WAB oferta pacotes fechados por horas mensais para garantir melhorias evolutivas, sanar dificuldades esporádicas e prestar auxílios periciais focados.
-*   Os chamados tramitarão pelo portal corporativo de Service Desk WAB.
-*   Para o porte do CPA Citros, indicamos os pacotes a partir de **10 a 20 horas/mês**. 
-*   **Gratuidade Inicial:** O projeto conta com 15 a 30 dias integrais de suporte contra bugs garantidos pós-publicação, sem incidência de franquia de pacotes de suporte, consolidando a estabilidade e o bom funcionamento de todos os módulos reportados.
+- Manejo e controle do HLB.
+- Interação Genômica.
+- Mitigação e sustentabilidade.
 
----
+**Projetos em Andamento:** Listagem com busca integrada por linha de pesquisa ou pesquisador responsável.
 
-## **6. Itens NÃO Inclusos Neste Escopo**
+- Nome do projeto, resumo do objetivo e pesquisador responsável.
 
-Com a clareza e transparência com a qual pautamos nossos projetos, enfatizamos que os seguintes tópicos ou tarefas não estão cobertos no respectivo orçamento, podendo tornar-se aditivos posteriormente ou encargo direto da gerência:
-1.  **Criação Textual, Copidesque ou Fotografia:** Geração dos textos iniciais e curadoria jornalística ou de material audiovisual ficará por conta das agências parceiras, Assessoria Institucional da própria Fundecitrus/Esalq, limitando-se o presente orçado à transposição ("cargo de dados") dos volumes cedidos finalizados.
-2.  **Soluções ou Integrações Acadêmicas Nativas:** Integração robotizada automática aos Portais CAPES/MEC ou currículo Lattes por Webservice não está prevista abertamente hoje (todo referenciamento ocorrerá mediante campo preenchível com link manualmente ou scraping sob avaliação futura não faturada aqui).
-3.  **Desenvolvimento de Apps Mobile Nativos:** O sistema será 100% web com interface responsiva mobile perfeita; mas sem publicações nas lojas virtuais Android/iOS dedicadas a Apps, já que tal arquitetura não se justifica inicialmente no plano.
-4.  **Gestão Externa:** Serviços de acompanhamento como SEO Contínuo, campanhas no Google Ads ou disparo de e-mail marketing corporativo.
+**Pesquisadores:** Grade com foto, nome, área de atuação e link para o currículo Lattes.
 
----
+- Ao clicar, abre perfil detalhado com projetos vinculados e publicações.
 
-## **7. Metodologia de Trabalho, Prazos e Cronograma**
+**Publicações Científicas:** Listagem completa com filtros por ano, tipo (artigo, abstract, dissertação) e pesquisador.
 
-O ciclo de desenvolvimento WAB envolverá entregas fracionadas e metódicas para transparência do andamento:
-*   **Sprint 1:** Configuração da infraestrutura, arquitetura de banco de dados (BDD), definições essenciais, autenticações de segurança, mapeamento do padrão Symfony. 
-*   **Sprint 2:** Implantação do CMS – Tela de controle com os blocos fundamentais de Notícias, Equipes, Banners, Sobre, Parceiros.
-*   **Sprint 3:** Conversão das interfaces visuais, e acoplamento (ligamento) dos Módulos Públicos da Home e Páginas Específicas à renderização das informações cadastradas.
-*   **Sprint 4:** Implementação da robustez de pesquisadores, Projetos e Publicações e codificação da complexidade da Área Restrita e Internacionalização (inglês/pt).
-*   **Sprint 5:** Deploy de Homologação, período de alimentação e Testagem por parte do Corpo Gestor CPA Citros. Emissão de reportes de finalização.
+- Download direto do PDF ou redirecionamento para o link DOI.
 
-O prazo natural estipulado para toda a execução é de aproximadamente **65 a 85 dias úteis**, condicionado ao rápido fornecimento de insumos textuais definitivos aos técnicos e pronta validação do layout de componentes por parte dos diretores de TI/Comunicação.
+#### ***Página "Comunicação"***
+
+**Canal de Notícias:** Matérias completas com imagem de destaque, título, resumo, corpo do texto, autor e data.
+
+- Suporte a vídeos incorporados (YouTube, Vimeo).
+
+**Na Mídia (Clipping):** Registro de matérias publicadas por outros veículos sobre o CPA Citros.
+
+- Imagem, título, resumo e link para o veículo original.
+
+**Vídeos e Podcasts:** Incorporação de conteúdos de plataformas externas como YouTube e Spotify.
+
+#### ***Página "Eventos e Oportunidades"***
+
+**Eventos Futuros:** Apresentação da agenda com banner, período do evento, formato (presencial, online ou híbrido) e texto de convite.
+
+**Eventos Realizados:** Repositório histórico com fotos, apresentações, PDFs e gravações dos eventos concluídos.
+
+**Oportunidades:** Listagem de vagas abertas para pesquisadores, bolsistas e pós-doutorandos.
+
+- Perfil desejado, titulação mínima e prazo de inscrição.
+- Status configurável entre "Aberto" e "Encerrado".
+
+#### ***Página "Contato"***
+
+- Formulário de contato com proteção antispam (reCAPTCHA/hCaptcha) e envio sem recarregar a página.
+- Exibição de contatos institucionais (e-mail e telefone).
 
 ---
 
-## **8. Investimento Estimado e Condições Padrões WAB**
+### Área Restrita dos Pesquisadores
 
-A estimativa orçamentária WAB é balizada pelas horas de engenharia necessárias à elaboração singular e sofisticada do núcleo da aplicação utilizando as mais consistentes regras do mercado corporativo Symfony.
+Um ambiente fechado e seguro para os membros cadastrados do CPA Citros.
 
-| Descritivo Geral | Categoria | Investimento Previsto (R$) |
-| :--- | :---: | :--- |
-| **Desenvolvimento Software Web: Frontend + Backend Symfony + CMS Customizado (Inclui Idiomas, Módulos Informativos e Arquitetura Banco de Dados)** | Serviços Engenharia e Customização Core | R$ 34.800,00 |
-| **Arquitetura Área Restrita (Login/Pesquisadores/Repositório) e Organização de Entidades Acadêmicas** | Serviços Interativos Modulares | R$ 12.500,00 |
+#### ***Login e Perfis***
 
-*Valor total referencial estimado (Desenvolvimento Completo, Homologações e Lançamento):* **R$ 47.300,00**
+- Acesso via barra superior com autenticação por e-mail e senha.
+- Dois perfis de acesso: **Administrador** e **Pesquisador**.
+- Criptografia de senhas (Bcrypt/Argon2i) e proteção contra ataques comuns (XSS, CSRF, SQL Injection).
 
-**Condições Gerais Comuns WAB de Pagamento:**
-*   A serem tratadas com o departamento comercial: Pode-se admitir diluições ao longo dos meses correspondentes a produção - ex: (35% na Assinatura, 30% em Meio Período/Progresso, 35% na Entrega Oficial do App em Produção).
-*   As quantias são passíveis de validação frente ao modelo de aquisições de centros públicos envolvidos.  
-*   Taxas fixas mensais posteriores relativas à Suporte e Hospedagem de Servidores serão geradas após termo efetivado de infraestrutura (Início médio de servidor institucional forte em R$ 980 a R$ 1600 mensais com serviços WAB incluídos, dependendo do storage necessário para repositório acadêmico).
+#### ***Repositório de Arquivos***
 
-> **Aprovação do Diagnóstico:** A leitura e o encerramento da fase deste documento consolidam as premissas acordadas. O próximo passo consistirá na chancela formal para formalização do Contrato.
+- Administradores criam pastas e publicam documentos restritos: relatórios, dados primários e outros materiais internos.
+- Pesquisadores cadastrados acessam e baixam os arquivos disponibilizados.
+
+---
+
+### Área Administrativa
+
+O painel de gerenciamento será desenvolvido para dar total independência à equipe do Fundecitrus, sem necessidade de conhecimento técnico. Cada área do site terá um painel próprio de gerenciamento, permettindo cadastrar, visualizar, editar e excluir informações de forma organizada.
+
+#### ***1. Painel de Controle (Dashboard)***
+
+- Indicadores rápidos: visualizações, notícias publicadas, projetos cadastrados e logins de pesquisadores.
+- Acesso rápido aos principais módulos de gerenciamento.
+
+#### ***2. Configurações da Página Inicial***
+
+- **Banners:** Cadastro ilimitado com imagem, título, subtítulo, botão de ação e ordenação.
+- **Textos institucionais:** Edição dos blocos "Sobre nós" e "Mais sobre o HLB".
+- **Indicadores Dinâmicos:** Atualização manual dos números exibidos na home (pesquisadores, projetos, publicações).
+- **Parceiros do Rodapé:** Adição e organização de logotipos com link externo.
+
+#### ***3. Sobre e Governança***
+
+- Edição de textos com editor rico (negrito, itálico, listas, links).
+- Cadastro de membros dos comitês por categoria, com foto, nome e função.
+- Gerenciamento das logomarcas de parceiros com nome, link e destaque por região/país.
+
+#### ***4. Pesquisa Científica***
+
+- Cadastro e edição das linhas de pesquisa e seus textos descritivos.
+- Gerenciamento de projetos com vínculo ao pesquisador responsável.
+- Cadastro completo de pesquisadores com foto, Lattes e área de atuação.
+- Publicações com upload de PDF, link DOI, autores, ano e tipo.
+
+#### ***5. Comunicação***
+
+- Criação de notícias com editor completo e suporte a mídia embarcada.
+- Cadastro de clippings externos (Na Mídia) e conteúdos multimídia.
+
+#### ***6. Eventos e Oportunidades***
+
+- Gerenciamento da agenda de eventos futuros e repositório de eventos realizados.
+- Cadastro e controle de status das oportunidades abertas.
+
+#### ***7. Usuários e Permissões***
+
+- Cadastro de pesquisadores com definição de perfil de acesso.
+- Ativação e desativação de contas sem excluir os dados do pesquisador.
+
+---
+
+## **Suporte a Dois Idiomas**
+
+O sistema será configurado para operar em **Português (pt-BR)** como idioma principal e **Inglês (en-US)**. Os administradores poderão cadastrar o conteúdo nos dois idiomas diretamente pelo painel de controle. A troca de idioma pelo visitante estará disponível na barra superior em todas as páginas.
+
+---
+
+## **Infraestrutura e Hospedagem**
+
+O projeto em Symfony requer um servidor adequado ao volume de dados e ao tráfego esperado. Recomendamos o pacote **VPS Dedicado WAB Host**, que inclui:
+
+- Servidor virtual privado Linux com alta disponibilidade (99,8% de uptime).
+- Certificado de segurança SSL (HTTPS).
+- Backups automáticos do banco de dados (diário) e dos arquivos (semanal).
+- Proteção contra ataques DDoS.
+- Acesso via SFTP e deploy automatizado por pipeline.
+
+*(Os valores exatos de infraestrutura serão definidos em proposta complementar, após análise do volume estimado do repositório de arquivos.)*
+
+---
+
+## **Manutenção e Suporte (SLA WAB)**
+
+A WAB oferece pacotes de horas mensais para garantir melhorias contínuas, correções e suporte técnico ao sistema.
+
+- Chamados abertos pelo portal de atendimento WAB.
+- Para um projeto do porte do CPA Citros, indicamos pacotes de **20 horas/mês**.
+- **Suporte pós-publicação:** 30 dias de suporte sem custo adicional para garantir a estabilidade de todos os módulos após a publicação.
+
+---
+
+## **O Que Não Está Incluído**
+
+Com a clareza que orienta nossos projetos, listamos abaixo o que não está previsto neste orçamento:
+
+1. **Produção de conteúdo:** A criação de textos, revisão e fotografia ficará a cargo da equipe do CPA Citros. O escopo aqui previsto é a inserção dos materiais já finalizados no sistema.
+2. **Integração automática com portais acadêmicos:** A integração com sistemas como CAPES ou importação automática do Lattes não está prevista. Os vínculos serão feitos manualmente por campos de link no painel.
+3. **Aplicativos mobile:** O site será responsivo e funcionará bem em celulares, mas não está previsto o desenvolvimento de apps para Android ou iOS.
+4. **Gestão de marketing digital:** Serviços como SEO contínuo, Google Ads ou e-mail marketing não fazem parte deste escopo.
+
+---
+
+## **Prazo e Cronograma**
+
+O desenvolvimento será dividido em entregas por etapas (sprints), com duração total estimada de **65 a 85 dias úteis**:
+
+- **Sprint 1:** Configuração do servidor, banco de dados, autenticação e estrutura base do Symfony.
+- **Sprint 2:** Desenvolvimento do CMS com os módulos principais: notícias, pesquisadores, banners, sobre e parceiros.
+- **Sprint 3:** Criação das interfaces visuais e integração com os dados do painel.
+- **Sprint 4:** Módulos de projetos, publicações, área restrita e suporte a idiomas.
+- **Sprint 5:** Publicação em ambiente de homologação, testes e ajustes finais com a equipe do CPA.
+
+O prazo conta com a entrega dos conteúdos textuais pela equipe do CPA e a validação do layout pelos responsáveis de Comunicação e TI.
+
+---
+
+## **Investimento e Condições de Pagamento**
+
+| Descrição | Categoria | Valor (R$) |
+| :--- | :---: | ---: |
+| **Desenvolvimento do site: frontend, backend Symfony e CMS personalizado** (suporte a idiomas, módulos informativos, banco de dados) | Desenvolvimento | R$ 34.800,00 |
+| **Área Restrita:** login, perfis de pesquisadores e repositório de arquivos | Módulos complementares | R$ 12.500,00 |
+| **Manutenção mensal (20h/mês)** — a partir de | Plano de Evolução Contínua | R$ 2.400,00/mês |
+
+**Valor total do desenvolvimento:** **R$ 47.300,00**
+
+**Condições de pagamento sugeridas:**
+- 40% na assinatura do contrato.
+- 30% na metade do desenvolvimento (entrega do Sprint 3).
+- 30% na entrega final e publicação.
+
+Os valores estão sujeitos a adequação conforme as regras de aquisição das instituições públicas envolvidas. Os custos mensais de hospedagem serão definidos em contrato separado.
+
+> **Aprovação:** A leitura e aceitação deste documento consolidam as bases do projeto. O próximo passo será a formalização do contrato.
 
 ---
 Atenciosamente,
 
-**WAB Agência Digital**  
-Diretorias Comercial e de Planejamento  
+**WAB Agência Digital**
+Diretorias Comercial e de Planejamento
 *(Contato Institucional Documentado)*

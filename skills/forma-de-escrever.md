@@ -44,11 +44,16 @@
 | Critério | Como NÃO deve ser (Versão Ruim) | Como DEVE ser (Texto Desejado) |
 | ----- | ----- | ----- |
 | **Clareza de Títulos** | Títulos técnicos e frios como "Sumário Executivo". | Títulos diretos e familiares como "Resumo Geral". |
-| **Complexidade Vocabular** | Uso de palavras complexas como "delimitante", "pautado", "proeminente" ou "transmitir credibilidade". \+2 | Palavras simples e comuns como "apresentar", "criar", "exibir" ou "funcionar". \+2 |
-| **Estrutura de Frase** | Frases longas com ordem indireta e excesso de termos técnicos. \+2 | Frases curtas, na ordem direta e com explicações fáceis de entender. \+2 |
+| **Complexidade Vocabular** | Uso de palavras complexas como "delimitante", "pautado", "proeminente" ou "transmitir credibilidade". | Palavras simples e comuns como "apresentar", "criar", "exibir" ou "funcionar". |
+| **Estrutura de Frase** | Frases longas com ordem indireta e excesso de termos técnicos. | Frases curtas, na ordem direta e com explicações fáceis de entender. |
 | **Uso de Adjetivos** | Excesso de adjetivos como "orgânica", "privativa", "compartimentada" e "sistêmica". | Redução de adjetivos, focando na função prática do item. |
-| **Apostos e Pontuação** | Uso de travessões para isolar explicações (ex: "(Banner/Hero Section)"). | Uso de vírgulas ou parênteses simples para explicações acessórias. \+1 |
-| **Tom do Conteúdo** | Foco em "parâmetros e limites técnicos" e "arquitetura". \+1 | Foco em "apresentar de forma clara" e no que o sistema fará "na prática". \+1 |
+| **Apostos e Pontuação** | Uso de travessões para isolar explicações (ex: "(Banner/Hero Section)"). | Uso de vírgulas ou parênteses simples para explicações acessórias. |
+| **Tom do Conteúdo** | Foco em "parâmetros e limites técnicos" e "arquitetura". | Foco em "apresentar de forma clara" e no que o sistema fará "na prática". |
 | **Descrição de Módulos** | Linguagem rebuscada como "raiz conceitual" ou "trilha do tempo histórica". | Linguagem direta como "proposta do evento" ou "linha do tempo que apresenta edições anteriores". |
-
-Exportar para as Planilhas  
+| **Apresentação da Empresa** | Focada em soluções digitais gerais e análise de reuniões. | Destaca os mais de 20 anos de experiência da WAB em comunicação. |
+| **Tecnologia Utilizada** | Programação e manutenção em WordPress. | Programação e manutenção utilizando o framework Symfony. |
+| **Tráfego de Hospedagem** | 1 Terabyte. | 500 Gigabytes. |
+| **Horas de Manutenção** | 5 horas mensais no Plano de Evolução Contínua. | 20 horas mensais no Plano de Evolução Contínua. |
+| **Preço do Desenvolvimento** | Estimativa de 180 a 200 horas. | Valor fixo de R$ 17.600,00. |
+| **Custo da Manutenção** | R$ 1.200,00 (ou R$ 4.800,00 conforme trecho conflitante). | R$ 2.400,00 mensais. |
+| **Condições de Pagamento** | 35% na entrada, 35% em 30 dias e 50% em 60 dias. | 40% na entrada e o restante dividido em duas parcelas (30 e 60 dias). |
